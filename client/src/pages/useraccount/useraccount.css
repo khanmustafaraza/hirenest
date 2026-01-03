@@ -1,0 +1,22 @@
+.user-account-section {
+  background-color: #f8f9fa;
+}
+
+.user-account-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.user-account-section .card {
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.user-account-section .card a {
+  color: #0d6efd;
+  text-decoration: underline;
+}

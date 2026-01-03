@@ -1,0 +1,88 @@
+.latest-jobs-saas {
+  background: #f9f9f9;
+  padding: 80px 0;
+}
+
+/* Section header */
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.section-header p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 50px;
+}
+
+/* Card */
+.latest-job-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.25s ease;
+  height: 100%;
+}
+
+.latest-job-card:hover {
+  border-color: #8b5e3c;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.job-header h5 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111111;
+  margin: 0;
+}
+
+.pill {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(139, 94, 60, 0.15);
+  color: #8b5e3c;
+  font-weight: 500;
+}
+
+/* Company & Location */
+.company {
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+/* Button */
+.job-btn {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  color: #111111;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.job-btn:hover {
+  border-color: #8b5e3c;
+  color: #8b5e3c;
+}

@@ -1,0 +1,151 @@
+/* ===== Footer Base ===== */
+.footer-bg {
+  background: #020617; /* slightly darker than navbar */
+  color: #cbd5f5;
+}
+
+/* ===== Brand ===== */
+.footer-brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: 0.3px;
+}
+
+.footer-brand span {
+  color: #b08968; /* premium accent */
+}
+
+/* ===== Text ===== */
+.footer-text {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* ===== Email ===== */
+.footer-email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 0.9rem;
+}
+
+.footer-email a {
+  color: #b08968;
+  text-decoration: none;
+}
+
+.footer-email a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Headings ===== */
+.footer-heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #f8fafc;
+  margin-bottom: 14px;
+}
+
+/* ===== Links ===== */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #f8fafc;
+}
+
+/* ===== Newsletter ===== */
+.newsletter-box {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.newsletter-box input {
+  flex: 1;
+  background: #020617;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8fafc;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
+
+.newsletter-box input::placeholder {
+  color: #64748b;
+}
+
+.newsletter-box input:focus {
+  outline: none;
+  border-color: #b08968;
+}
+
+.newsletter-box button {
+  background: #b08968;
+  color: #020617;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/* ===== Divider ===== */
+.footer-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 32px 0 20px;
+}
+
+/* ===== Bottom ===== */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* ===== Social ===== */
+.social-icons {
+  display: flex;
+  gap: 14px;
+}
+
+.social-icons a {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #b08968;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 576px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

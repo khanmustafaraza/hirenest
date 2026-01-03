@@ -1,0 +1,48 @@
+.register-section {
+  background-color: white;
+}
+
+.register-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: gray;
+  padding: 10px 0px;
+  /* border: 1px solid black; */
+}
+
+.register-form-container {
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0px 4px lightgray;
+  max-width: 900px;
+  margin: 0 auto;
+  /* padding: 30px; */
+}
+
+.input-group-text {
+  background-color: lightgray;
+  border: 1px solid #ced4da;
+  border-radius: 3px !important;
+}
+
+.eye-icon {
+  background-color: transparent;
+  border-left: none;
+  color: #333;
+}
+.register-btn {
+  border: 0px;
+  background: #020617;
+  /* width: 100%; */
+  padding: 10px 23px;
+  border-radius: 3px;
+  color: white;
+}
+.register-btn:hover {
+  border: 0px;
+  background: #1b6fa7;
+  /* width: 100%; */
+  padding: 10px 23px;
+  border-radius: 3px;
+  color: white;
+}

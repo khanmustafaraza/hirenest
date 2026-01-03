@@ -1,0 +1,77 @@
+/* ===== Section ===== */
+.testimonials-section {
+  background: #ffffff;
+  padding: 96px 0;
+}
+
+/* ===== Header ===== */
+.section-header h2 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.3px;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: #64748b;
+  max-width: 520px;
+  margin: 10px auto 0;
+}
+
+/* ===== Card ===== */
+.testimonial-card {
+  padding: 28px 24px;
+  height: 100%;
+  border-left: 3px solid #b08968;
+  background: #f8fafc;
+}
+
+/* ===== Header ===== */
+.testimonial-header {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-image {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.role {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+/* ===== Body ===== */
+.testimonial-body {
+  margin-top: 16px;
+}
+
+.quote-icon {
+  font-size: 1rem;
+  color: #b08968;
+  margin-bottom: 8px;
+}
+
+.feedback {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 576px) {
+  .testimonial-card {
+    padding: 24px 20px;
+  }
+}

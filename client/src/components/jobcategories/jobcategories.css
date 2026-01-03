@@ -1,0 +1,42 @@
+.job-categories-saas {
+  padding: 70px 0;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.section-header p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 40px;
+}
+
+.category-tile {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-tile:hover {
+  border-color: #8b5e3c;
+  background: #fafafa;
+}
+
+.category-icon {
+  color: #8b5e3c;
+  font-size: 1.2rem;
+}
+
+.category-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #111;
+}

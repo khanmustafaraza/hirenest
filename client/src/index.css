@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  --bg-dark: #0f172a;
+  --bg-light: #f8fafc;
+  --accent: #b08968;
+  --accent-soft: rgba(176, 137, 104, 0.15);
+
+  --text-dark: #0f172a;
+  --text-light: #f8fafc;
+  --text-muted: #94a3b8;
+
+  --border-light: #e5e7eb;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  border: 2px solid gray !important;
+}
+.form-control {
+  border-radius: 3px !important;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "AR One Sans", sans-serif; */
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+a {
+  color: inherit !important;
+  text-decoration: none;
+  /* color: white !important; */
+}
+.mt-60 {
+  margin: 54px 0 5px 0px;
+}

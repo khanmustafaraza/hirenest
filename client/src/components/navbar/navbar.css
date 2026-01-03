@@ -1,0 +1,106 @@
+/* ===== Navbar Wrapper ===== */
+.hirenest-navbar {
+  background: white; /* deep slate */
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+}
+
+/* ===== Brand ===== */
+.hirenest-brand {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: 0.4px;
+}
+
+.hirenest-brand span {
+  color: #b08968; /* premium accent */
+}
+
+.hirenest-brand:hover {
+  color: #f8fafc;
+}
+
+/* ===== Nav Links ===== */
+.nav-link {
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #0d3f72;
+}
+
+/* ===== Account Link ===== */
+.account-link {
+  cursor: pointer;
+}
+
+/* ===== Login Button ===== */
+.hirenest-login-btn {
+  background: transparent;
+  border: 1px solid #b08968;
+  color: #b08968;
+  padding: 6px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.hirenest-login-btn:hover {
+  background: #b08968;
+  color: #0f172a;
+}
+
+/* ===== Search ===== */
+.hirenest-search {
+  gap: 6px;
+}
+
+.hirenest-search input {
+  /* background: #020617; */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+.hirenest-search input::placeholder {
+  color: #64748b;
+}
+
+.hirenest-search input:focus {
+  box-shadow: none;
+  border-color: #b08968;
+}
+
+.hirenest-search button {
+  background: #b08968;
+  border: none;
+  color: #0f172a;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/* ===== Dropdown ===== */
+.dropdown-menu {
+  /* background: #020617; */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dropdown-item {
+  color: #cbd5f5;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background: rgba(176, 137, 104, 0.15);
+  color: #f8fafc;
+}

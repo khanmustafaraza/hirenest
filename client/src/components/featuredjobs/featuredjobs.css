@@ -1,0 +1,54 @@
+.featured-jobs-saas {
+  background: #fafafa;
+  padding: 80px 0;
+}
+
+.featured-job-saas {
+  background: #fffaf5;
+  border: 1px solid rgba(139, 94, 60, 0.35);
+  border-radius: 14px;
+  padding: 28px;
+  transition: all 0.3s ease;
+}
+
+.featured-job-saas:hover {
+  border-color: #8b5e3c;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pill {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(139, 94, 60, 0.15);
+  color: #8b5e3c;
+}
+
+.company {
+  font-size: 0.9rem;
+  color: #374151;
+  margin: 10px 0;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.primary-btn {
+  background: #8b5e3c;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.login-section {
+  background-color: #f4f6f8;
+}
+
+.login-section .form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.login-section .form-control {
+  border-radius: 6px;
+}
+
+.login-section .btn-dark {
+  padding: 10px;
+  font-weight: 600;
+}
+
+.login-section .input-group-text {
+  background: #f1f1f1;
+  border-left: none;
+}

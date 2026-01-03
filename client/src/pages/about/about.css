@@ -1,0 +1,125 @@
+/* HERO */
+.about-hero {
+  padding: 100px 0 70px;
+  background: #ffffff;
+}
+
+.about-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.about-hero span {
+  color: #020617;
+}
+
+.about-hero p {
+  max-width: 520px;
+  margin: 14px auto 0;
+  font-size: 1rem;
+  color: #64748b;
+}
+
+/* SECTION */
+.about-section {
+  padding: 80px 0;
+}
+
+.about-section h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.muted {
+  color: #64748b;
+  margin-top: 10px;
+}
+
+.about-list {
+  margin-top: 18px;
+  padding-left: 18px;
+  color: #475569;
+}
+
+.about-list li {
+  margin-bottom: 8px;
+}
+
+/* IMAGE */
+.about-image {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* VALUES */
+.about-values {
+  padding: 70px 0;
+  background: #f8fafc;
+}
+
+.about-values h5 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.about-values p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* STEPS */
+.about-steps {
+  padding: 80px 0;
+}
+
+.about-steps h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.step-box {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 26px 18px;
+}
+
+.step-box span {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.step-box p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* CTA */
+.about-cta {
+  padding: 90px 0;
+  background: #020617;
+  color: #ffffff;
+}
+
+.about-cta h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.about-cta p {
+  color: #cbd5f5;
+  margin: 10px 0 24px;
+}
+
+.cta-btn {
+  background: #ffffff;
+  color: #020617;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}

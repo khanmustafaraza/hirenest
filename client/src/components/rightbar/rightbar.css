@@ -1,0 +1,5 @@
+.min {
+  min-height: 100vh;
+  flex: 1;
+  /* border: 3px solid rgb(11, 130, 241); */
+}

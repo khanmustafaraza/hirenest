@@ -1,0 +1,21 @@
+.dashboard-section {
+  background-color: #eef1f6;
+}
+
+.dashboard-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.dashboard-section .p-4 {
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-section h5 {
+  color: #0d6efd;
+  font-weight: 600;
+}
