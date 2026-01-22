@@ -1,5 +1,14 @@
-.min {
-  min-height: 100vh;
+.rightbar {
   flex: 1;
-  /* border: 3px solid rgb(11, 130, 241); */
+  /* min-height: 100vh; */
+  background: #f8fafc; /* soft neutral */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+.rightbar-content {
+  flex: 1;
+  /* padding: 20px 24px; */
+  background: #f8fafc;
 }

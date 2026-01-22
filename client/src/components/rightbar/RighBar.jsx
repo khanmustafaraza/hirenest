@@ -3,15 +3,16 @@ import TopBar from "../topbar/TopBar";
 import AdminFooter from "../adminfooter/AdminFooter";
 import "./rightbar.css";
 
-const RighBar = ({ children }) => {
+const RightBar = ({ children }) => {
   return (
-    <div className="min" style={{ position: "relative" }}>
+    <main className="rightbar">
       <TopBar />
-      <div className="p-1 mb-4">{children}</div>
 
-      <AdminFooter />
-    </div>
+      <section className="rightbar-content">{children}</section>
+
+      {/* <AdminFooter /> */}
+    </main>
   );
 };
 
-export default RighBar;
+export default RightBar;

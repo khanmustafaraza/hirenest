@@ -3,8 +3,8 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
-import JobAppProvider from "./context/JobContext.jsx";
-import { AuthAppProvider } from "./context/AuthContext.jsx";
+import { AuthAppProvider } from "./store/authcontext/AuthContext.jsx";
+import { JobAppProvider } from "./store/jobcontext/JobContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>

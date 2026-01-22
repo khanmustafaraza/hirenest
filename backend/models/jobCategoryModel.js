@@ -2,10 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const jobCategorySchema = new Schema(
   {
-    name: {
-      type: String,
-    },
-    iconName: {
+    categoryName: {
       type: String,
     },
   },

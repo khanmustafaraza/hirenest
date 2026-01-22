@@ -12,7 +12,10 @@ import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Register from "./pages/auth/register/Register";
 import { ToastContainer, toast } from "react-toastify";
-import Protected from "./routes/Protected";
+import AdminRoute from "./routes/adminroute/AdminRoute";
+import AddJobCategory from "./pages/admin/jobcategory/AddJobCategory";
+import JobCategoryList from "./pages/admin/jobcategory/JobCategoryList";
+// import Protected from "./routes/Protected";
 // import PostJob from "./pages/admin/postjob/PostJob";
 
 const App = () => {
@@ -27,14 +30,16 @@ const App = () => {
         <Route path="/login" element={<Login />} />
 
         {/* ✔👀🔯 admin routes */}
-        {/* <Route path="/admin" element={<Protected />}> */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/admin/jobs" element={<ManageJobs />} />
-        <Route path="/admin/saved-posts" element={<ManageJobs />} />
-        <Route path="/admin/applications" element={<Applications />} />
-        <Route path="/admin/add-post" element={<PostJob />} />
-        <Route path="/admin/register-user" element={<RegisterList />} />
-        {/* </Route> */}
+        <Route path="/admin" element={<AdminRoute />}>
+          <Route path="admin-dashboard" element={<Dashboard />} />
+          <Route path="add-job-category" element={<AddJobCategory />} />
+          <Route path="job-category-list" element={<JobCategoryList />} />
+          <Route path="/admin/jobs" element={<ManageJobs />} />
+          <Route path="/admin/saved-posts" element={<ManageJobs />} />
+          <Route path="/admin/applications" element={<Applications />} />
+          <Route path="/admin/add-post" element={<PostJob />} />
+          <Route path="/admin/register-user" element={<RegisterList />} />
+        </Route>
       </Routes>
     </>
   );

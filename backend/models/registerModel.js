@@ -28,11 +28,11 @@ const registerSchema = new Schema(
       // select: false, // prevents password from being returned by default
     },
 
-    role: {
-      type: String,
-      enum: ["jobseeker", "jobcreator"],
-      default: "jobseeker",
-    },
+    // role: {
+    //   type: String,
+    //   enum: ["jobseeker", "jobcreator"],
+    //   default: "jobseeker",
+    // },
 
     isAdmin: {
       type: Boolean,

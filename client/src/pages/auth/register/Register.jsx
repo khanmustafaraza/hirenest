@@ -10,13 +10,13 @@ import {
 import { NavLink } from "react-router-dom";
 import Navbar from "@components/navbar/Navbar";
 import Footer from "@components/footer/Footer";
-import { useAuth } from "../../../context/AuthContext";
 import "./register.css";
+import useAuth from "../../../store/authcontext/AuthContext";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { handleRegisterChange, handleRegisterSubmit, state } = useAuth();
-  const formData = state.register;
+  const formData = state.registerObj;
 
   return (
     <>
@@ -43,8 +43,8 @@ const Register = () => {
                       className="form-control"
                       placeholder="Enter User Name... e.g. johndoe123@gmail.com"
                       required
-                      name="username"
-                      value={formData.username}
+                      name="userName"
+                      value={formData.userName}
                       onChange={handleRegisterChange}
                     />
                   </div>
@@ -92,41 +92,6 @@ const Register = () => {
                     >
                       {showPassword ? <FaEyeSlash /> : <FaEye />}
                     </span>
-                  </div>
-                </div>
-                {/* role */}
-                <div className="mb-3">
-                  <label className="form-label">Role</label>
-                  <div className="input-group">
-                    <span className="input-group-text">
-                      <FaCriticalRole />
-                    </span>
-
-                    <select
-                      name="role"
-                      className="form-control"
-                      onChange={handleRegisterChange}
-                    >
-                      <option value="">Role</option>
-                      <option value="jobcreator">JobCreator</option>
-                      <option value="jobseeker">JobSeeker</option>
-                    </select>
-
-                    {/* <input
-                      type="checkbox"
-                     
-                      required
-                      name="password"
-                      value={formData.password}
-                      onChange={handleRegisterChange}
-                    />
-                    <span
-                      className="input-group-text eye-icon"
-                      onClick={() => setShowPassword(!showPassword)}
-                      style={{ cursor: "pointer" }}
-                    >
-                      {showPassword ? <FaEyeSlash /> : <FaEye />}
-                    </span> */}
                   </div>
                 </div>
 

@@ -1,53 +1,42 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { reducer } from "../reducers/AuthReducer";
+import { reducer } from "../../reducers/authreducer/AuthReducer";
+const AuthAppContext = createContext();
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-const AuthContext = createContext();
-
 const initialState = {
-  register: { username: "", email: "", password: "", role: "" },
+  registerObj: { userName: "", email: "", password: "" },
   login: { email: "", password: "" },
   isLoading: false,
   isError: false,
-  user: { username: "", role: "", isAdmin: false, token: "" }, // single source of truth
+  token: "", // single source of truth
 };
 
 const AuthAppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const navigate = useNavigate();
-
-  // Populate state from localStorage on mount
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
     const token = localStorage.getItem("token");
-    if (storedUser && token) {
+    // console.log(storedUser.user);
+    // const token = localStorage.getItem("token");
+    if (token) {
       dispatch({
         type: "SET_LOGIN_USER",
-        payload: { user: storedUser, token },
+        payload: { token },
       });
     }
   }, []);
 
   // Sync localStorage whenever user state changes
   useEffect(() => {
-    if (state.user.token) {
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          username: state.user.username,
-          role: state.user.role,
-          isAdmin: state.user.isAdmin,
-        })
-      );
-      localStorage.setItem("token", state.user.token);
+    if (state.token) {
+      localStorage.setItem("token", state.token);
     } else {
-      localStorage.removeItem("user");
       localStorage.removeItem("token");
     }
-  }, [state.user]);
+  }, [state.token]);
 
   const handleRegisterChange = (e) => {
     const { name, value } = e.target;
@@ -70,6 +59,7 @@ const AuthAppProvider = ({ children }) => {
         body: JSON.stringify(state.login),
       });
       const data = await res.json();
+      console.log(data);
       if (!res.ok) throw new Error(data.message || "Invalid credentials");
 
       // Update state
@@ -96,7 +86,7 @@ const AuthAppProvider = ({ children }) => {
       const res = await fetch(`${API_URL}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(state.register),
+        body: JSON.stringify(state.registerObj),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Registration failed");
@@ -110,20 +100,24 @@ const AuthAppProvider = ({ children }) => {
     }
   };
   return (
-    <AuthContext.Provider
+    <AuthAppContext.Provider
       value={{
         state,
         handleRegisterChange,
         handleRegisterSubmit,
-        handleLoginChange,
         handleLoginSubmit,
+        handleLoginChange,
         handleLogout,
       }}
     >
       {children}
-    </AuthContext.Provider>
+    </AuthAppContext.Provider>
   );
 };
 
-const useAuth = () => useContext(AuthContext);
-export { AuthAppProvider, useAuth };
+const useAuth = () => {
+  return useContext(AuthAppContext);
+};
+
+export default useAuth;
+export { AuthAppProvider };

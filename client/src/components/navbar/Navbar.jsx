@@ -2,10 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import "./navbar.css";
-import { useAuth } from "../../context/AuthContext";
+// import { useAuth } from "../../context/AuthContext";
 
 const Navbar = () => {
-  const { state } = useAuth();
+  // const { state } = useAuth();
 
   return (
     <nav className="navbar navbar-expand-lg hirenest-navbar fixed-top">
@@ -51,48 +51,6 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
-
-            {state?.user?.token ? (
-              <li className="nav-item dropdown">
-                <span
-                  className="nav-link dropdown-toggle account-link"
-                  data-bs-toggle="dropdown"
-                >
-                  <FaUserCircle className="me-1 fs-5" />
-                  Account
-                </span>
-
-                <ul className="dropdown-menu dropdown-menu-end shadow">
-                  <li>
-                    <NavLink className="dropdown-item" to="/dashboard">
-                      Dashboard
-                    </NavLink>
-                  </li>
-
-                  {state.user.isAdmin && (
-                    <>
-                      <li>
-                        <hr className="dropdown-divider" />
-                      </li>
-                      <li>
-                        <NavLink
-                          className="dropdown-item"
-                          to="/admin/dashboard"
-                        >
-                          Admin Panel
-                        </NavLink>
-                      </li>
-                    </>
-                  )}
-                </ul>
-              </li>
-            ) : (
-              <li className="nav-item">
-                <NavLink to="/login" className="btn hirenest-login-btn">
-                  Login
-                </NavLink>
-              </li>
-            )}
           </ul>
 
           {/* Search */}

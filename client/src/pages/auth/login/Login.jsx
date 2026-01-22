@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import "./login.css";
 import Navbar from "../../../components/navbar/Navbar";
 import Footer from "../../../components/footer/Footer";
-import { useAuth } from "../../../context/AuthContext";
+import useAuth from "../../../store/authcontext/AuthContext";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);

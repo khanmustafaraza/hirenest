@@ -3,8 +3,9 @@ const app = express();
 const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./config/database");
-const authRoutes = require("./routes/authroute/authRoute");
-const adminAuthRoute = require("./routes/admin-auth");
+const authRoute = require("./routes/authroute/authRoute");
+const adminAuthRoute = require("./routes/adminroute/adminAuthRoute");
+const jobCategoryRoute = require("./routes/jobcategoryroute/jobCategoryRoute");
 dotenv.config();
 // ! MIDDLEWARES
 app.use(express.json());
@@ -15,7 +16,8 @@ app.use(cors("*"));
 
 // ! ROUTES
 // app.use("/api/auth", authRoutes);
-app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoute);
+app.use("/api/admin/job-category", jobCategoryRoute);
 // ! ADMIN AUTH ROUTE
 app.use("/api/admin", adminAuthRoute);
 

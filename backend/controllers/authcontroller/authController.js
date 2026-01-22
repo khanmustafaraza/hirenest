@@ -5,10 +5,10 @@ const generateToken = require("../../utlis/token");
 // ✅ CREATE A NEW ACCOUNT CONTROLLER
 const registerController = async (req, res) => {
   try {
-    const { username, email, password, role } = req.body;
+    const { userName, email, password, role } = req.body;
 
     // Validate fields
-    if (!username || !email || !password || !role) {
+    if (!userName || !email || !password) {
       return res.status(400).json({
         success: false,
         message: "All fields are required",
@@ -16,12 +16,12 @@ const registerController = async (req, res) => {
     }
 
     // Check valid role
-    if (!["jobcreator", "jobseeker"].includes(role)) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid role. Must be jobcreator or jobseeker",
-      });
-    }
+    // if (!["jobcreator", "jobseeker"].includes(role)) {
+    //   return res.status(400).json({
+    //     success: false,
+    //     message: "Invalid role. Must be jobcreator or jobseeker",
+    //   });
+    // }
 
     // Check duplicate email
     const existAccount = await Register.findOne({ email });
@@ -35,10 +35,9 @@ const registerController = async (req, res) => {
     // Hash password & save
     const hashed = await hashPassword(password);
     const newUser = await Register.create({
-      userName: username,
+      userName: userName,
       email,
       password: hashed,
-      role,
     });
 
     return res.status(201).json({
@@ -56,7 +55,7 @@ const registerController = async (req, res) => {
 };
 
 // ✅ LOGIN
-const login = async (req, res) => {
+const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -85,7 +84,7 @@ const login = async (req, res) => {
 
     const token = generateToken({
       _id: existAccount._id,
-      role: existAccount.role,
+
       isAdmin: existAccount.isAdmin,
     });
 
@@ -93,13 +92,6 @@ const login = async (req, res) => {
       success: true,
       message: "Login successful",
       payload: {
-        user: {
-          username: existAccount.userName,
-
-          role: existAccount.role,
-          isAdmin: existAccount.isAdmin,
-        },
-
         token: token,
       },
     });
@@ -130,4 +122,4 @@ const deleteAccount = async (req, res) => {
   }
 };
 
-module.exports = { registerController };
+module.exports = { registerController, loginController };
