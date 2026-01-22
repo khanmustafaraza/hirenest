@@ -1,56 +1,37 @@
 .topbar {
-  height: 60px;
-  padding: 0 20px;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #eef0f3;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-/* Left title */
-.topbar-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-/* Right section */
-.topbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-/* Notification */
-.notification {
-  position: relative;
-  font-size: 16px;
-  color: #475569;
+/* Icons */
+.icon {
+  font-size: 18px;
+  color: #374151;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
+.icon:hover {
+  color: #0dcaf0;
+  transform: scale(1.1);
+}
+
+/* Notification dot */
 .notification .dot {
   position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 7px;
-  height: 7px;
-  background: #ef4444;
+  top: 2px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  background: #dc3545;
   border-radius: 50%;
 }
 
-/* Profile */
+/* Profile hover */
 .profile {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  color: #334155;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.profile svg {
-  font-size: 20px;
-  color: #64748b;
+.profile:hover {
+  color: #0dcaf0;
 }
