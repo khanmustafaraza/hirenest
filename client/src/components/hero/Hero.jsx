@@ -1,5 +1,6 @@
 import React from "react";
 import "./hero.css";
+import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -18,8 +19,9 @@ const Hero = () => {
           </p>
 
           <div className="hero-actions">
-            <button className="hero-btn primary">Find Jobs</button>
-            <button className="hero-btn secondary">Post a Job</button>
+            <NavLink to="/jobs">
+              <button className="hero-btn primary">Find Jobs</button>
+            </NavLink>
           </div>
         </div>
       </div>

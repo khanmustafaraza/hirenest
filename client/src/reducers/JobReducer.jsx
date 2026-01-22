@@ -10,10 +10,7 @@ const reducer = (state, action) => {
         },
       };
     case "SET_ALL_JOBS":
-      return {
-        ...state,
-        jobs: action.payload,
-      };
+      return { ...state, jobs: action.payload };
 
     default:
       return state;

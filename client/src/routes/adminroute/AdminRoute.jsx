@@ -9,8 +9,6 @@ const AdminRoute = () => {
   const [isAdminVerified, setIsAdminVerified] = useState(false);
   const API_URL = import.meta.env.VITE_API_URL;
 
-  console.log("verify Token", state.token);
-
   useEffect(() => {
     const verifyAdmin = async () => {
       const token = state?.token || localStorage.getItem("token");

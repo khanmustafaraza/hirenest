@@ -2,7 +2,8 @@
 .hirenest-navbar {
   background: white; /* deep slate */
   padding: 6px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 4px lightgray;
+
   z-index: 1000;
 }
 
@@ -15,11 +16,7 @@
 }
 
 .hirenest-brand span {
-  color: #b08968; /* premium accent */
-}
-
-.hirenest-brand:hover {
-  color: #f8fafc;
+  color: #ff0066; /* premium accent */
 }
 
 /* ===== Nav Links ===== */
@@ -53,7 +50,7 @@
 }
 
 .hirenest-login-btn:hover {
-  background: #b08968;
+  background: #ff0066;
   color: #0f172a;
 }
 

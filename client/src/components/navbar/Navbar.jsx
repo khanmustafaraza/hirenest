@@ -54,14 +54,14 @@ const Navbar = () => {
           </ul>
 
           {/* Search */}
-          <form className="d-flex hirenest-search">
+          {/* <form className="d-flex hirenest-search">
             <input
               type="search"
               className="form-control"
               placeholder="Search jobs, skills..."
             />
             <button className="btn">Search</button>
-          </form>
+          </form> */}
         </div>
       </div>
     </nav>

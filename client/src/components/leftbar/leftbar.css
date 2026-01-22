@@ -15,7 +15,7 @@
 }
 
 .nav-link:hover {
-  background: rgba(13, 202, 240, 0.15);
+  /* background: rgba(13, 202, 240, 0.15); */
   transform: translateX(4px);
 }
 

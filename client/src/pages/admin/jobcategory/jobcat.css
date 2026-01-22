@@ -1,0 +1,133 @@
+/* Professional Input */
+.professional-input {
+  height: 42px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+}
+
+.professional-input:focus {
+  border-color: #ff0066;
+  box-shadow: 0 0 0 0.15rem rgba(255, 0, 102, 0.15);
+}
+
+/* Professional Button */
+.professional-btn {
+  background-color: #ff0066;
+  color: #ffffff;
+  border: none;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.professional-btn:hover {
+  background-color: #e6005c;
+}
+
+.professional-btn:focus {
+  box-shadow: 0 0 0 0.15rem rgba(255, 0, 102, 0.25);
+}
+
+/* list */
+/* Page Base */
+.job-category-page {
+  background-color: #f8f9fb;
+}
+
+/* Header */
+.page-header h5 {
+  font-size: 1.1rem;
+}
+
+.page-header p {
+  font-size: 0.875rem;
+}
+
+/* Card */
+.category-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+}
+
+/* Table */
+.category-table thead {
+  background-color: #fafafa;
+  border-bottom: 1px solid #eee;
+}
+
+.category-table th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6c757d;
+  padding: 14px 16px;
+}
+
+.category-table td {
+  padding: 14px 16px;
+  font-size: 0.9rem;
+}
+
+/* Index column */
+.index-col {
+  width: 70px;
+  text-align: center;
+  color: #9aa0a6;
+}
+
+/* Action column */
+.action-col {
+  width: 100px;
+  text-align: center;
+}
+
+/* Category Name */
+.category-name {
+  font-weight: 500;
+  color: #212529;
+}
+
+/* Row hover */
+.category-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.category-table tbody tr:hover {
+  background-color: #fcfcfd;
+}
+
+/* Icon Button */
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+/* Delete */
+.delete-btn {
+  color: #ff0066;
+}
+
+.delete-btn:hover {
+  background-color: rgba(79, 209, 61, 0.08);
+  color: #d6578a;
+}
+
+/* Empty State */
+.empty-state {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9aa0a6;
+}

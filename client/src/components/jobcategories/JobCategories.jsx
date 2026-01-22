@@ -10,12 +10,12 @@ import {
 import "./JobCategories.css";
 
 const categories = [
-  { name: "Design", icon: <FaPaintBrush /> },
-  { name: "Development", icon: <FaCode /> },
-  { name: "Marketing", icon: <FaBullhorn /> },
-  { name: "Sales", icon: <FaChartLine /> },
-  { name: "Human Resources", icon: <FaUsers /> },
-  { name: "Data Science", icon: <FaDatabase /> },
+  { name: "Design" },
+  { name: "Development" },
+  { name: "Marketing" },
+  { name: "Sales" },
+  { name: "Human Resources" },
+  { name: "Data Science" },
 ];
 
 const JobCategories = () => {
@@ -23,7 +23,7 @@ const JobCategories = () => {
     <section className="job-categories-saas">
       <div className="container">
         <div className="section-header text-center">
-          <h2>Explore by Category</h2>
+          <h2>Explore By Category</h2>
           <p>Select a domain to discover relevant roles</p>
         </div>
 

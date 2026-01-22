@@ -9,10 +9,8 @@
   color: #f8fafc;
 
   /* Background Image + Overlay */
-  background-image: linear-gradient(
-      rgba(15, 23, 42, 0.85),
-      rgba(2, 6, 23, 0.95)
-    ),
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
 
   background-size: cover;
@@ -39,8 +37,8 @@
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: #b08968;
-  border: 1px solid rgba(176, 137, 104, 0.35);
+  color: white;
+  border: 1px solid gray;
   padding: 6px 14px;
   border-radius: 999px;
   margin-bottom: 20px;
@@ -55,13 +53,13 @@
 }
 
 .hero-title span {
-  color: #b08968;
+  color: #ff0066;
 }
 
 /* Subtitle */
 .hero-subtitle {
   font-size: 1rem;
-  color: #94a3b8;
+  color: lightgray;
   line-height: 1.6;
   margin-bottom: 32px;
 }
@@ -84,20 +82,20 @@
 
 /* Primary Button */
 .hero-btn.primary {
-  background: #b08968;
-  color: #020617;
+  background: #ff0066;
+  color: white;
   border: none;
 }
 
 .hero-btn.primary:hover {
-  background: #c29a78;
+  background: #ff66a6;
 }
 
 /* Secondary Button */
 .hero-btn.secondary {
-  background: transparent;
+  background: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #f8fafc;
+  color: black;
 }
 
 .hero-btn.secondary:hover {

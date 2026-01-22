@@ -1,48 +1,79 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LeftBar from "../../../components/leftbar/LeftBar";
 import RightBar from "../../../components/rightbar/RighBar";
-import { FaClock, FaMoneyBill, FaTrash, FaUserGraduate } from "react-icons/fa";
-import { useEffect } from "react";
+import { FaTrash } from "react-icons/fa";
 import useJob from "../../../store/jobcontext/JobContext";
+import "./jobcat.css";
 
 const JobCategoryList = () => {
   const { state, getAllJobCategory } = useJob();
+
   useEffect(() => {
     getAllJobCategory();
   }, []);
+
   return (
-    <div className="d-flex">
+    <div className="d-flex job-category-page">
       <LeftBar />
 
       <RightBar>
         <div className="container-fluid px-4 py-4">
-          {/* Page Title */}
-          <div className="mb-4">
-            <h5 className="fw-semibold text-dark">Job Category List</h5>
+          {/* Header */}
+          <div className="page-header mb-4">
+            <div>
+              <h5 className="fw-semibold mb-1">Job Categories</h5>
+              <p className="text-muted mb-0">
+                Organize and manage categories for job postings
+              </p>
+            </div>
           </div>
 
-          <div className="table-responsive">
-            <table className="table table-bordered">
-              <thead className="text-muted text-center">
-                <tr>
-                  <th>#</th>
-                  <th>Category Name</th>
+          {/* Card */}
+          <div className="card category-card">
+            <div className="card-body p-0">
+              <div className="table-responsive">
+                <table className="table category-table mb-0 align-middle">
+                  <thead>
+                    <tr>
+                      <th className="index-col">#</th>
+                      <th>Category Name</th>
+                      <th className="action-col">Action</th>
+                    </tr>
+                  </thead>
 
-                  <th className="text-center">Action</th>
-                </tr>
-              </thead>
-              <tbody className="text-center">
-                <td>01</td>
-                <td>category Name</td>
-                <td>
-                  <div>
-                    <div>
-                      <FaTrash />
-                    </div>
-                  </div>
-                </td>
-              </tbody>
-            </table>
+                  <tbody>
+                    {state.jobCategoryList?.length > 0 ? (
+                      state.jobCategoryList.map((category, index) => (
+                        <tr key={category._id}>
+                          <td className="index-col">
+                            {String(index + 1).padStart(2, "0")}
+                          </td>
+
+                          <td className="category-name">
+                            {category.categoryName}
+                          </td>
+
+                          <td className="action-col">
+                            <button
+                              className="icon-btn delete-btn"
+                              title="Delete Category"
+                            >
+                              <FaTrash size={13} />
+                            </button>
+                          </td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan="3" className="empty-state">
+                          No job categories available
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </RightBar>

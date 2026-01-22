@@ -41,8 +41,10 @@ const addCategoryController = async (req, res) => {
    GET ALL CATEGORIES
 ================================ */
 const categoryListController = async (req, res) => {
+  console.log("first");
   try {
     const categories = await JobCategory.find().sort({ createdAt: -1 });
+    console.log(categories);
 
     res.status(200).json({
       success: true,
@@ -74,7 +76,7 @@ const categoryUpdateController = async (req, res) => {
     const updatedCategory = await JobCategory.findByIdAndUpdate(
       req.params.id,
       { categoryName },
-      { new: true }
+      { new: true },
     );
 
     if (!updatedCategory) {
