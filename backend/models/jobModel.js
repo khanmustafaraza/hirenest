@@ -82,6 +82,14 @@ const jobSchema = new mongoose.Schema(
       type: [String],
       default: [],
     },
+    isFeatured:{
+      type:Boolean,
+      default:false
+    },
+    isLatest:{
+      type:Boolean,
+      default:false
+    }
   },
   {
     timestamps: true,

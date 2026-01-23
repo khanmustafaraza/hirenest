@@ -27,8 +27,9 @@ const navLinks = [
     icon: IoMdList,
   },
   { to: "/admin/add-post", label: "Add Job", icon: FaPlus },
+    { to: "/admin/jobs", label: "Jobs List", icon: FaBriefcase },
   { to: "/admin/users", label: "Users", icon: FaUsers },
-  { to: "/admin/jobs", label: "Jobs", icon: FaBriefcase },
+
 
   { to: "/admin/saved-posts", label: "Saved", icon: FaBookmark },
   { to: "/admin/register-user", label: "Registrations", icon: FaRegRegistered },

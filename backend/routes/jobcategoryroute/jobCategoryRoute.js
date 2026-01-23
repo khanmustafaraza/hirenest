@@ -6,7 +6,7 @@ const jobCategoryController = require("../../controllers/jobcategorycontroller/j
 // categoryUpdateController,
 // categoryDeleteController,
 
-router.post("/register", jobCategoryController.addCategoryController);
-router.get("/category-list", jobCategoryController.categoryListController);
+router.post("/admin/job-category/register", jobCategoryController.addCategoryController);
+router.get("/job-category/category-list", jobCategoryController.categoryListController);
 
 module.exports = router;

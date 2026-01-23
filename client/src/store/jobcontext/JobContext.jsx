@@ -82,7 +82,7 @@ const JobAppProvider = ({ children }) => {
   const getAllJobCategory = async () => {
     try {
       const res = await fetch(
-        `${VITE_API_URL}/api/admin/job-category/category-list`,
+        `${VITE_API_URL}/api/job-category/category-list`,
         {
           method: "GET",
           headers: {
@@ -180,7 +180,7 @@ const JobAppProvider = ({ children }) => {
 
   const getAllJobs = async () => {
     try {
-      const res = await fetch(`${VITE_API_URL}/api/admin/job/get-all-jobs`, {
+      const res = await fetch(`${VITE_API_URL}/api/job/get-all-jobs`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

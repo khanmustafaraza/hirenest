@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaPaintBrush,
   FaCode,
@@ -8,6 +8,7 @@ import {
   FaDatabase,
 } from "react-icons/fa";
 import "./JobCategories.css";
+import useJob from "../../store/jobcontext/JobContext";
 
 const categories = [
   { name: "Design" },
@@ -19,6 +20,12 @@ const categories = [
 ];
 
 const JobCategories = () => {
+const {state,getAllJobCategory} =   useJob();
+
+
+useEffect(()=>{
+getAllJobCategory()
+},[])
   return (
     <section className="job-categories-saas">
       <div className="container">
@@ -28,11 +35,11 @@ const JobCategories = () => {
         </div>
 
         <div className="row">
-          {categories.map((cat, i) => (
+          {state?. jobCategoryList.map((cat, i) => (
             <div key={i} className="col-6 col-md-4 col-lg-3 mb-3">
               <div className="category-tile">
-                <span className="category-icon">{cat.icon}</span>
-                <span className="category-name">{cat.name}</span>
+              
+                <span className="category-name">{cat.categoryName}</span>
               </div>
             </div>
           ))}

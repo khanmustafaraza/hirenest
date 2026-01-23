@@ -18,8 +18,8 @@ app.use(cors("*"));
 // ! ROUTES
 // app.use("/api/auth", authRoutes);
 app.use("/api/auth", authRoute);
-app.use("/api/admin/job-category", jobCategoryRoute);
-app.use("/api/admin/job", jobRoute);
+app.use("/api", jobCategoryRoute);
+app.use("/api", jobRoute);
 // ! ADMIN AUTH ROUTE
 app.use("/api/admin", adminAuthRoute);
 
