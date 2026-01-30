@@ -1,12 +1,116 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
+import {
+  FaMapMarkerAlt,
+  FaClock,
+} from "react-icons/fa";
+import useJob from "../../store/jobcontext/JobContext";
+import "./joblist.css";
+import { NavLink } from "react-router-dom";
 
 const JobList = () => {
+  const { state, getAllJobs } = useJob();
+
+  useEffect(() => {
+    getAllJobs();
+  }, []);
+
   return (
-    <div>
+    <div className="jobs-page">
       <Navbar />
-        this  Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ab tempore necessitatibus in pariatur asperiores dicta repellat vel quam, incidunt animi nesciunt itaque. Quia tempora ut labore ex debitis et quae officia in omnis possimus. Inventore animi voluptates necessitatibus rem sunt, voluptatum beatae, possimus iusto deleniti dolorem quod quos fuga nemo consectetur impedit nesciunt, voluptatem vitae ipsa commodi eligendi atque molestiae adipisci ea? Iste aliquam odit, asperiores totam rem dignissimos sed aliquid enim quae voluptatibus laboriosam fuga a quisquam alias accusamus repellendus at. Atque, aut alias labore odit totam pariatur aperiam recusandae deleniti eius dolorem, corrupti voluptates qui quaerat iste dignissimos debitis eum velit obcaecati quisquam, cum repellat officiis distinctio tempora. Vero, labore. Tenetur, voluptate error praesentium ut ducimus consequuntur nulla cumque natus dignissimos, fuga temporibus dicta! Recusandae fugiat minima nesciunt sunt, vel perferendis ea, nisi harum molestiae earum eos laboriosam quia, fugit architecto dolores. Possimus praesentium hic dolor exercitationem odio ad nam ex, commodi tempore accusamus a nihil quibusdam dolorem sunt voluptatibus corrupti itaque asperiores magnam deleniti saepe repudiandae impedit. Labore perspiciatis culpa animi dolore deleniti ea vel sequi provident fuga? Suscipit quam sequi modi impedit, repellat quidem quod aspernatur, facilis accusantium aliquid, illo vero est rem ullam velit dolore architecto numquam laudantium provident veniam porro laborum consequatur. In tenetur assumenda eos ratione at, laborum ipsam et quam laudantium non porro, unde perspiciatis sunt facere culpa repudiandae alias nostrum vero? Sunt facilis laborum expedita! Tempore veritatis quae repudiandae iusto illum, maxime dolorum ullam commodi maiores cumque voluptatum cum dolore optio, praesentium iure, doloribus eius adipisci iste consectetur quibusdam vel placeat! Tenetur saepe fuga unde, odit nulla accusantium eligendi numquam soluta praesentium eius maiores, quis rerum ipsa veniam impedit illo sed neque reprehenderit totam quia atque quod? Fugiat voluptatum culpa eius reiciendis magni qui saepe exercitationem debitis. Magni, recusandae sit!
+
+      {/* HERO */}
+      <section className="jobs-hero">
+        <div className="container">
+          <h1>Open Positions</h1>
+          <p>
+            Carefully selected roles from trusted companies
+          </p>
+        </div>
+      </section>
+
+      {/* FILTER BAR */}
+      <section className="jobs-filters">
+        <div className="container">
+          <div className="filters-wrapper">
+            <select>
+              <option>Category</option>
+            </select>
+
+            <select>
+              <option>Location</option>
+            </select>
+
+            <select>
+              <option>Experience</option>
+            </select>
+
+            <select>
+              <option>Job Type</option>
+            </select>
+
+            <button className="filter-btn">
+              Apply Filters
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* JOB GRID */}
+      <section className="container jobs-grid-section">
+        {state.jobs.length > 0 ? (
+          <div className="row g-4">
+            {state.jobs.map((job) => (
+              <div className="col-md-6" key={job._id}>
+                <div className="exclusive-job-card">
+                  <div className="card-top">
+                    <div>
+                      <h5>{job.jobTitle}</h5>
+                      <p>
+                        {job.companyName} · {job.jobType}
+                      </p>
+                    </div>
+
+                    <span className="status">
+                      <FaClock /> Hiring
+                    </span>
+                  </div>
+
+                  <div className="card-middle">
+                    <span>
+                      <FaMapMarkerAlt /> {job.jobLocation}
+                    </span>
+                  </div>
+
+                  <div className="card-tags">
+                    <span>
+                      {job.categoryName?.categoryName || "General"}
+                    </span>
+                    {job.experience && (
+                      <span>{job.experience}</span>
+                    )}
+                  </div>
+
+                  <div className="card-bottom">
+                    <NavLink to = {`/job-details/${job._id}`}>
+
+                    <button className="card-btn">
+                      View role →
+                    </button>
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="empty-state">
+            No positions available
+          </div>
+        )}
+      </section>
+
       <Footer />
     </div>
   );

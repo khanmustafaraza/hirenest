@@ -27,7 +27,7 @@ const navLinks = [
     icon: IoMdList,
   },
   { to: "/admin/add-post", label: "Add Job", icon: FaPlus },
-    { to: "/admin/jobs", label: "Jobs List", icon: FaBriefcase },
+    { to: "/admin/admin-job-list", label: "Jobs List", icon: FaBriefcase },
   { to: "/admin/users", label: "Users", icon: FaUsers },
 
 

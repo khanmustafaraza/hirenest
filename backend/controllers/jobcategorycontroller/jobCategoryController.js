@@ -41,11 +41,11 @@ const addCategoryController = async (req, res) => {
    GET ALL CATEGORIES
 ================================ */
 const categoryListController = async (req, res) => {
-  console.log("first");
+ 
   try {
     const categories = await JobCategory.find().sort({ createdAt: -1 });
-    console.log(categories);
 
+    
     res.status(200).json({
       success: true,
       data: categories,

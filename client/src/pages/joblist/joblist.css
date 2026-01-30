@@ -1,0 +1,150 @@
+/* PAGE */
+.jobs-page {
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* HERO */
+.jobs-hero {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #ffffff;
+  padding: 70px 0;
+}
+
+.jobs-hero h1 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+.jobs-hero p {
+  opacity: 0.8;
+  max-width: 520px;
+}
+
+/* FILTER BAR */
+.jobs-filters {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.filters-wrapper {
+  display: flex;
+  gap: 14px;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+.filters-wrapper select {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  min-width: 140px;
+  background: #ffffff;
+}
+
+.filter-btn {
+  background: #020617;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 13px;
+}
+
+.filter-btn:hover {
+  background: #4f46e5;
+}
+
+/* GRID SECTION */
+.jobs-grid-section {
+  padding: 60px 0;
+}
+
+/* JOB CARD */
+.exclusive-job-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 26px;
+  border: 1px solid #e5e7eb;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.exclusive-job-card:hover {
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+}
+
+/* CARD TOP */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card-top h5 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.card-top p {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* STATUS */
+.status {
+  font-size: 12px;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* MIDDLE */
+.card-middle {
+  margin: 18px 0;
+  font-size: 13px;
+  color: #475569;
+}
+
+/* TAGS */
+.card-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card-tags span {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* BUTTON */
+.card-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #020617;
+}
+
+.card-btn:hover {
+  color: #4f46e5;
+}
+
+/* EMPTY */
+.empty-state {
+  text-align: center;
+  padding: 80px 0;
+  color: #64748b;
+}
