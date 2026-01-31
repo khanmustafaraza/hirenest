@@ -5,13 +5,16 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { AuthAppProvider } from "./store/authcontext/AuthContext.jsx";
 import { JobAppProvider } from "./store/jobcontext/JobContext.jsx";
+import { UserAppProvider } from "./store/usercontext/UserContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <AuthAppProvider>
       <JobAppProvider>
-        <App />
+        <UserAppProvider>
+          <App />
+        </UserAppProvider>
       </JobAppProvider>
     </AuthAppProvider>
-  </BrowserRouter>
+  </BrowserRouter>,
 );

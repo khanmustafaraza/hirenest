@@ -7,6 +7,7 @@ const authRoute = require("./routes/authroute/authRoute");
 const adminAuthRoute = require("./routes/adminroute/adminAuthRoute");
 const jobCategoryRoute = require("./routes/jobcategoryroute/jobCategoryRoute");
 const jobRoute = require("./routes/jobroute/jobRoute");
+const userRoute  = require("./routes/userroute/UserRoute")
 dotenv.config();
 // ! MIDDLEWARES
 app.use(express.json());
@@ -22,6 +23,11 @@ app.use("/api", jobCategoryRoute);
 app.use("/api", jobRoute);
 // ! ADMIN AUTH ROUTE
 app.use("/api/admin", adminAuthRoute);
+
+// USER ROUTE
+
+
+app.use("/api",userRoute)
 
 // todo HOME PAGE
 app.get("/", (req, res) => {
