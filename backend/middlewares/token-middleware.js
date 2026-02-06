@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const verifyToken = (req, res, next) => {
   try {
     const authorization = req.headers.authorization;
+    // console.log(authorization)
 
     if (!authorization || !authorization.startsWith("Bearer ")) {
       return res.status(401).json({
@@ -14,8 +15,10 @@ const verifyToken = (req, res, next) => {
     const token = authorization.split(" ")[1];
 
     const decoded = jwt.verify(token, process.env.SECRET_KEY);
+    console.log(decoded)
 
     req.user = decoded;
+    // console.log(req.user)
     next();
   } catch (error) {
     if (error.name === "TokenExpiredError") {

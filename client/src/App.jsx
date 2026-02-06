@@ -20,6 +20,7 @@ import AdminJobList from "./pages/admin/adminjoblist/AdminJobList";
 import JobDetails from "./pages/jobdetails/JobDetails";
 import UserDashboard from "./pages/user/userdashbaord/UserDashboard";
 import UserProfile from "./pages/user/userprofile/UserProfile";
+import UserProfileById from "./pages/user/uerprofilebyid/UserProfileById";
 // import Protected from "./routes/Protected";
 // import PostJob from "./pages/admin/postjob/PostJob";
 
@@ -40,6 +41,7 @@ const App = () => {
 
         <Route path = "/user-dashboard" element ={<UserDashboard/>}/>
         <Route path = "/add-user-profile" element ={<UserProfile/>}/>
+        <Route path = "/user-profile-by-id" element ={<UserProfileById/>}/>
 
         {/* ✔👀🔯 admin routes */}
         <Route path="/admin" element={<AdminRoute />}>

@@ -7,7 +7,7 @@ const authRoute = require("./routes/authroute/authRoute");
 const adminAuthRoute = require("./routes/adminroute/adminAuthRoute");
 const jobCategoryRoute = require("./routes/jobcategoryroute/jobCategoryRoute");
 const jobRoute = require("./routes/jobroute/jobRoute");
-const userRoute  = require("./routes/userroute/UserRoute")
+const userRoute  = require("./routes/userroute/UserRoute");
 dotenv.config();
 // ! MIDDLEWARES
 app.use(express.json());

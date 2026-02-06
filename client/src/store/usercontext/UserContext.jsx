@@ -3,11 +3,11 @@ import { toast } from "react-toastify";
 import reducer from "../../reducers/userreducer/UserReducer";
 import useAuth from "../authcontext/AuthContext";
 
-// todo Create the context
+// Create the context
 const CreateUserContext = createContext();
 const VITE_API_URL = import.meta.env.VITE_API_URL;
 
-// // Initial state
+// Initial state
 const initialState = {
   profileObj: {
     profile_Pic: null,
@@ -17,65 +17,108 @@ const initialState = {
     experience: "",
     address: "",
   },
+  profileData: {
+    profile_Pic: null,
+    fullName: "",
+    phone: "",
+    dob: "",
+    experience: "",
+    address: "",
+    resume: null,
+  },
+  userProfile: null, // fetched profile
 };
 
 // Context provider component
 const UserAppProvider = ({ children }) => {
-  const {state:{token}} =   useAuth();
-  console.log(token)
- const handleProfileChange = (e) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const {
+    state: { token },
+  } = useAuth();
+
+  // Handle form input changes
+  const handleProfileChange = (e) => {
     const { name, value, files, type } = e.target;
-  
+
     dispatch({
       type: "HANDLE_PROFILE_CHANGE",
       payload: {
         name,
-        value: type === "file" ? files : value
-      }
+        value: type === "file" ? files : value, // keep your current logic
+      },
     });
   };
-const handleProfileSubmit = async (e) => {
-  e.preventDefault();
 
-  const formData = new FormData();
+  // Submit user profile form
+  const handleProfileSubmit = async (e) => {
+    e.preventDefault();
 
-  // Make sure you reference the nested profileObj
-  formData.append("fullName", state.profileObj.fullName);
-  formData.append("email", state.profileObj.email);
-  formData.append("profile_Pic", state.profileObj.profile_Pic); // File object
-  formData.append("resume", state.profileObj.resume);           // File object
+    const formData = new FormData();
+    const { profile_Pic, resume, fullName, phone, dob, experience, address } =
+      state.profileObj;
 
-  console.log("Form Data:", state.profileObj);
+    formData.append("profile_Pic", profile_Pic);
+    formData.append("resume", resume);
+    formData.append("fullName", fullName);
+    formData.append("phone", phone);
+    formData.append("dob", dob);
+    formData.append("experience", experience);
+    formData.append("address", address);
 
-  try {
-    const res = await fetch(`${VITE_API_URL}/api/user/add-user-profile`, {
-      method: "POST",
-      body: formData // Do NOT set Content-Type, browser sets multipart/form-data
-    });
+    try {
+      const res = await fetch(`${VITE_API_URL}/api/user/add-user-profile`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData, // browser sets multipart/form-data automatically
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (data.success) {
-      toast.success(data.message);
-    } else {
-      toast.error(data.message);
+      if (data.success) {
+        toast.success(data.message);
+      } else {
+        toast.error(data.error);
+      }
+    } catch (error) {
+      console.log("Profile submit error:", error);
+      toast.error("Failed to submit profile");
     }
-  } catch (error) {
-    console.error("Profile submit error:", error);
-  }
-};
+  };
 
-  // * use reducer
-  const [state, dispatch] = useReducer(reducer, initialState);
+  // Fetch user profile by ID
+  const getUserProfileById = async () => {
+    if (!token) return;
 
- 
+    try {
+      const res = await fetch(`${VITE_API_URL}/api/user/user-profile-by-id`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        dispatch({ type: "SET_USER_PROFILE", payload: data.data });
+      } else {
+        toast.error(data.error);
+      }
+    } catch (error) {
+      console.log("Profile fetch error:", error);
+      toast.error("Failed to fetch profile");
+    }
+  };
 
   return (
     <CreateUserContext.Provider
       value={{
         state,
         handleProfileChange,
-        handleProfileSubmit
+        handleProfileSubmit,
+        getUserProfileById,
       }}
     >
       {children}
@@ -83,11 +126,10 @@ const handleProfileSubmit = async (e) => {
   );
 };
 
-// create a cutom hook
+// Custom hook
 const useUserContext = () => {
   return useContext(CreateUserContext);
 };
 
 export { UserAppProvider };
-
 export default useUserContext;

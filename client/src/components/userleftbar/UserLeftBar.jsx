@@ -7,7 +7,7 @@ const UserLeftBar = ({ user }) => {
   const userNavItems = [
     { _id: 0, name: "Dashboard", icon: <FaBars />, link: "/user-dashboard" },
     { _id: 1, name: "Add Profile", icon: <FaUser />, link: "/add-user-profile" },
-    { _id: 2, name: "Profile", icon: <FaUserAltSlash />, link: "/user-profile-list" },
+    { _id: 2, name: "Profile", icon: <FaUserAltSlash />, link: "/user-profile-by-id" },
     { _id: 3, name: "Applied Job List", icon: <FaBriefcase />, link: "/apply-job-list" },
   ];
 
