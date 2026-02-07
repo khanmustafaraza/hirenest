@@ -1,111 +1,127 @@
-import React from "react";
-import { FaMapMarkerAlt, FaBriefcase, FaClock, FaDollarSign, FaBookmark, FaTag } from "react-icons/fa";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import {
+  FaMapMarkerAlt,
+  FaBriefcase,
+  FaClock,
+  FaDollarSign,
+  FaBookmark,
+  FaTag,
+} from "react-icons/fa";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import "./jobdetails.css";
-
-const jobData = {
-  categoryName: "IT & Development",
-  jobTitle: "Aut ad laboris rerum",
-  companyName: "Stein Alston Co",
-  companyWebLink: "https://ballandprattplc.com",
-  jobLocation: "Quidem soluta error",
-  jobType: "Internship",
-  salary: "Est officia incidunt",
-  experience: "Eos qui velit temp",
-  applicationDeadline: "1996-01-07T00:00:00.000+00:00",
-  contactEmail: "cacaqoso@mailinator.com",
-  responsibilities: [
-    "Design, develop, and maintain software solutions",
-    "Collaborate with cross-functional teams",
-  ],
-  requirements: [
-    "Bachelor’s degree in Computer Science or related field",
-    "Strong problem-solving skills",
-  ],
-  skills: ["JavaScript", "React", "Node.js", "CSS", "HTML"],
-  tags: ["Frontend", "Internship", "Remote", "High Priority"],
-  jobDescription: [
-    "This is an exciting opportunity to grow as a software developer in a professional environment.",
-    "You will work on challenging projects with experienced engineers and receive mentorship to advance your career.",
-  ],
-};
+import useJob from "../../store/jobcontext/JobContext";
 
 const JobDetails = () => {
+  const { id } = useParams();
+  const { getJobDetails, state } = useJob();
+  const job = state?.jobDetailObj;
+
+  useEffect(() => {
+    if (id) getJobDetails(id);
+  }, [id]);
+
   const applyNow = () => alert("Apply Now clicked!");
   const saveJob = () => alert("Job Saved!");
+
+  if (!job || !job.jobTitle) {
+    return (
+      <>
+        <Navbar />
+        <div className="job-details-page">
+          <div className="container">
+            <p className="loading-text">Loading job details…</p>
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
       <Navbar />
       <div className="job-details-page">
-        <div className="container">
-
-          {/* Premium Two-Column Layout */}
-          <div className="job-header">
-            {/* Left card */}
-            <div className="job-meta-card">
-              <h1>{jobData.jobTitle}</h1>
-              <p className="company-link">
-                <a href={jobData.companyWebLink} target="_blank" rel="noreferrer">{jobData.companyName}</a>
-              </p>
-              <div className="job-meta">
-                <span><FaTag /> {jobData.categoryName}</span>
-                <span><FaMapMarkerAlt /> {jobData.jobLocation}</span>
-                <span><FaBriefcase /> {jobData.jobType}</span>
-                <span><FaDollarSign /> {jobData.salary}</span>
-                <span>Experience: {jobData.experience}</span>
-                <span><FaClock /> {new Date(jobData.applicationDeadline).toLocaleDateString()}</span>
-              </div>
-              <p className="contact-email">Contact: {jobData.contactEmail}</p>
-
-              {/* Floating buttons */}
-              <div className="job-actions">
-                <button className="apply-btn" onClick={applyNow}>Apply Now</button>
-                <button className="save-btn" onClick={saveJob}><FaBookmark /> Save</button>
-              </div>
+        <div className="container job-details-container">
+          {/* Left Panel */}
+          <aside className="job-meta-card">
+            <h1 className="job-title">{job.jobTitle}</h1>
+            <a
+              href={job.companyWebLink}
+              target="_blank"
+              rel="noreferrer"
+              className="company-link"
+            >
+              {job.companyName}
+            </a>
+            <div className="job-meta">
+              {job.categoryName && <span><FaTag /> {job.categoryName}</span>}
+              {job.jobLocation && <span><FaMapMarkerAlt /> {job.jobLocation}</span>}
+              {job.jobType && <span><FaBriefcase /> {job.jobType}</span>}
+              {job.salary && <span><FaDollarSign /> {job.salary}</span>}
+              {job.experience && <span>Experience: {job.experience}</span>}
+              {job.applicationDeadline && (
+                <span><FaClock /> {new Date(job.applicationDeadline).toLocaleDateString()}</span>
+              )}
             </div>
+            {job.contactEmail && <p className="contact-email">Contact: {job.contactEmail}</p>}
 
-            {/* Right: content */}
-            <div className="job-content">
-              <section>
+            <div className="job-actions">
+              <button className="apply-btn" onClick={applyNow}>Apply Now</button>
+              <button className="save-btn" onClick={saveJob}><FaBookmark /> Save</button>
+            </div>
+          </aside>
+
+          {/* Right Content */}
+          <main className="job-content">
+            {job.jobDescription?.length > 0 && (
+              <section className="job-section">
                 <h3>Job Description</h3>
-                {jobData.jobDescription.map((desc, i) => <p key={i}>{desc}</p>)}
+                {job.jobDescription.map((desc, i) => <p key={i}>{desc}</p>)}
               </section>
+            )}
 
-              <section>
+            {job.responsibilities?.length > 0 && (
+              <section className="job-section">
                 <h3>Responsibilities</h3>
                 <ul>
-                  {jobData.responsibilities.map((item, i) => <li key={i}>{item}</li>)}
+                  {job.responsibilities.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
               </section>
+            )}
 
-              <section>
+            {job.requirements?.length > 0 && (
+              <section className="job-section">
                 <h3>Requirements</h3>
                 <ul>
-                  {jobData.requirements.map((item, i) => <li key={i}>{item}</li>)}
+                  {job.requirements.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
               </section>
+            )}
 
-              <section>
+            {job.skills?.length > 0 && (
+              <section className="job-section">
                 <h3>Skills</h3>
                 <ul className="skills-list">
-                  {jobData.skills.map((skill, i) => <li key={i}>{skill}</li>)}
+                  {job.skills.map((skill, i) => <li key={i}>{skill}</li>)}
                 </ul>
               </section>
+            )}
 
-              <section>
+            {job.tags?.length > 0 && (
+              <section className="job-section">
                 <h3>Tags</h3>
                 <div className="tags">
-                  {jobData.tags.map((tag, i) => <span key={i}>{tag}</span>)}
+                  {job.tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}
                 </div>
               </section>
-            </div>
-          </div>
+            )}
+          </main>
         </div>
       </div>
 
-      {/* Floating bottom buttons for mobile */}
+      {/* Mobile Action Bar */}
       <div className="mobile-action-bar">
         <button className="apply-btn" onClick={applyNow}>Apply Now</button>
         <button className="save-btn" onClick={saveJob}><FaBookmark /> Save</button>

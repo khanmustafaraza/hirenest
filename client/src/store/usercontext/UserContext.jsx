@@ -89,6 +89,7 @@ const UserAppProvider = ({ children }) => {
 
   // Fetch user profile by ID
   const getUserProfileById = async () => {
+    console.log(token)
     if (!token) return;
 
     try {
@@ -100,6 +101,7 @@ const UserAppProvider = ({ children }) => {
       });
 
       const data = await res.json();
+      console.log(data)
 
       if (data.success) {
         dispatch({ type: "SET_USER_PROFILE", payload: data.data });

@@ -27,6 +27,11 @@ const reducer = (state, action) => {
         ...state,
         jobs: action.payload,
       };
+    case "SET_JOB_DETAILS":
+      return {
+        ...state,
+        jobDetailObj: action.payload,
+      };
 
     default:
       return state;

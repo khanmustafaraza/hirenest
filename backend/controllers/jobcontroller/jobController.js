@@ -46,12 +46,17 @@ const getAllJobs = async (req, res) => {
 /**
  * Get Job By ID
  */
-const getJobById = async (req, res) => {
+const getJobDetails = async (req, res) => {
   try {
-    const job = await Job.findById(req.params.id).populate(
-      "jobCategory",
-      "categoryName",
-    );
+    // const { jobId } = req.body;
+    console.log(req.params.id)
+
+    // Validate jobId
+   
+
+    // Find job by ID
+    const job = await Job.findById(req.params.id);
+    console.log(job)
 
     if (!job) {
       return res.status(404).json({
@@ -60,18 +65,20 @@ const getJobById = async (req, res) => {
       });
     }
 
-    return res.status(200).json({
+    // Return job details
+    res.status(200).json({
       success: true,
-      data: job,
+      message: "Job details fetched successfully",
+      job, // send the full job object
     });
   } catch (error) {
-    return res.status(400).json({
+    console.error("Get job details error:", error);
+    res.status(500).json({
       success: false,
-      message: "Invalid job ID",
+      message: "Server error while fetching job details",
     });
   }
 };
-
 /**
  * Update Job
  */
@@ -136,7 +143,7 @@ const deleteJob = async (req, res) => {
 module.exports = {
   createJob,
   getAllJobs,
-  getJobById,
+  getJobDetails,
   updateJob,
   deleteJob,
 };

@@ -30,6 +30,25 @@ const initialState = {
     tags: "", // comma separated
     jobDescription: "", // comma separated
   },
+jobDetailObj : {
+  categoryName: "",
+  jobTitle: "",
+  companyName: "",
+  companyWebLink: "",
+  jobLocation: "",
+  jobType: "",
+  salary: "",
+  experience: "",
+  applicationDeadline: "",
+  contactEmail: "",
+
+  responsibilities: [],
+  requirements: [],
+  skills: [],
+  tags: [],
+  jobDescription: []
+},
+
   // You can start with empty or preloaded jobs
 };
 
@@ -200,6 +219,35 @@ const JobAppProvider = ({ children }) => {
     }
   };
 
+const getJobDetails = async (id) => {
+  try {
+    const res = await fetch(`${VITE_API_URL}/api/user/job/job-details/${id}`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+     
+    });
+
+    const data = await res.json();
+    console.log(data)
+
+    if (data.success) {
+      // Update the jobDetailObj in state
+      dispatch({
+        type: "SET_JOB_DETAILS",
+        payload: data.job || {}, // make sure backend returns job object
+      });
+
+      toast.success("Job details fetched successfully");
+    } else {
+      toast.error(data.message || "Failed to fetch job details");
+    }
+  } catch (error) {
+    console.error("Get job details error:", error);
+    toast.error("Something went wrong while fetching job details");
+  }
+};
+
+
   // todo delete a job
 
   const handleJobDelete = async (id) => {
@@ -233,6 +281,7 @@ const JobAppProvider = ({ children }) => {
         handleJobSubmit,
         getAllJobs,
         handleJobDelete,
+        getJobDetails
       }}
     >
       {children}
