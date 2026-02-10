@@ -135,4 +135,24 @@ const serveUploadedFile = (req, res) => {
   res.sendFile(filePath);
 };
 
-module.exports = { createProfile, getProfileList, getProfileByUserId,serveUploadedFile };
+//  user applied job application
+
+const  userAppliedJobApplication = async(req,res) =>{
+  try {
+
+    const  jobId = req.params.id;
+    const  id = req.user
+     
+    
+    
+  }catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+}
+
+
+module.exports = { createProfile, getProfileList, getProfileByUserId,serveUploadedFile,userAppliedJobApplication };
