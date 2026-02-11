@@ -87,6 +87,7 @@ router.get(
 router.get("/user/uploads/:filename", userController.serveUploadedFile);
 
 router.post("/user/apply-job-application/:id",verifyToken ,userController.userAppliedJobApplication)
+router.get("/user/apply-job-application-list",verifyToken ,userController.userAppliedJobApplicationList)
 
 
 

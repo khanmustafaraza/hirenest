@@ -17,6 +17,11 @@ const reducer = (state, action) => {
         ...state,
         userProfile: action.payload, // store fetched profile
       };
+    case "SET_APPLIED_JOB":
+      return{
+        ...state,
+        appliedJobs:action.payload
+      }
 
     default:
       return state;

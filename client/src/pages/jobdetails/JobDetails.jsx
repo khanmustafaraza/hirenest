@@ -12,10 +12,12 @@ import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import "./jobdetails.css";
 import useJob from "../../store/jobcontext/JobContext";
+import useUserContext from "../../store/usercontext/UserContext";
 
 const JobDetails = () => {
   const { id } = useParams();
   const { getJobDetails, state } = useJob();
+ const {userAppliedJobApplication}  = useUserContext()
   const job = state?.jobDetailObj;
 
   useEffect(() => {
@@ -68,7 +70,7 @@ const JobDetails = () => {
             {job.contactEmail && <p className="contact-email">Contact: {job.contactEmail}</p>}
 
             <div className="job-actions">
-              <button className="apply-btn" onClick={applyNow}>Apply Now</button>
+              <button className="apply-btn" onClick={() => userAppliedJobApplication(job._id)}>Apply Now</button>
               <button className="save-btn" onClick={saveJob}><FaBookmark /> Save</button>
             </div>
           </aside>
@@ -123,7 +125,7 @@ const JobDetails = () => {
 
       {/* Mobile Action Bar */}
       <div className="mobile-action-bar">
-        <button className="apply-btn" onClick={applyNow}>Apply Now</button>
+        <button className="apply-btn" onClick={() => userAppliedJobApplication(job._id)}>Apply Now</button>
         <button className="save-btn" onClick={saveJob}><FaBookmark /> Save</button>
       </div>
 

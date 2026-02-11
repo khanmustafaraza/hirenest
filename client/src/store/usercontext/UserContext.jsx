@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import { toast } from "react-toastify";
 import reducer from "../../reducers/userreducer/UserReducer";
 import useAuth from "../authcontext/AuthContext";
@@ -27,6 +27,7 @@ const initialState = {
     resume: null,
   },
   userProfile: null, // fetched profile
+  appliedJobs:[]
 };
 
 // Context provider component
@@ -89,7 +90,7 @@ const UserAppProvider = ({ children }) => {
 
   // Fetch user profile by ID
   const getUserProfileById = async () => {
-    console.log(token)
+  
     if (!token) return;
 
     try {
@@ -101,7 +102,7 @@ const UserAppProvider = ({ children }) => {
       });
 
       const data = await res.json();
-      console.log(data)
+     
 
       if (data.success) {
         dispatch({ type: "SET_USER_PROFILE", payload: data.data });
@@ -113,6 +114,44 @@ const UserAppProvider = ({ children }) => {
       toast.error("Failed to fetch profile");
     }
   };
+  const userAppliedJobApplication = async(id) =>{
+   
+    try {
+      const res  = await fetch(`${VITE_API_URL}/api/user/apply-job-application/${id}`,{
+        method:"POST",
+        headers:{
+          Authorization : `Bearer ${token}`
+        }
+      })
+      const data = await res.json();
+      alert(data.msg)
+      
+    } catch (error) {
+      
+    }
+  };
+
+  const userAppliedJobList = async() =>{
+     try {
+      const res  = await fetch(`${VITE_API_URL}/api/user/apply-job-application-list`,{
+        method:"GET",
+        headers:{
+          Authorization : `Bearer ${token}`
+        }
+      })
+      const data = await res.json();
+      // alert(data)
+      console.log(data)
+      dispatch({
+        type:"SET_APPLIED_JOB",
+        payload:data.data
+      })
+      
+    } catch (error) {
+      
+    }
+  }
+ 
 
   return (
     <CreateUserContext.Provider
@@ -121,6 +160,8 @@ const UserAppProvider = ({ children }) => {
         handleProfileChange,
         handleProfileSubmit,
         getUserProfileById,
+        userAppliedJobApplication,
+        userAppliedJobList
       }}
     >
       {children}

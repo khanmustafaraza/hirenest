@@ -5,7 +5,7 @@ const Job = require("../../models/jobModel");
  */
 const createJob = async (req, res) => {
   try {
-    console.log(req.body.categoryName);
+ 
     const job = await Job.create(req.body);
 
     return res.status(201).json({
@@ -49,14 +49,14 @@ const getAllJobs = async (req, res) => {
 const getJobDetails = async (req, res) => {
   try {
     // const { jobId } = req.body;
-    console.log(req.params.id)
+    
 
     // Validate jobId
    
 
     // Find job by ID
     const job = await Job.findById(req.params.id);
-    console.log(job)
+   
 
     if (!job) {
       return res.status(404).json({

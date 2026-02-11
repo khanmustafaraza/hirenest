@@ -4,20 +4,23 @@ const jobApplicationSchema = new Schema(
   {
     jobId: {
       type: Schema.Types.ObjectId,
-      ref :"Job"
+      ref: "Job",
     },
     profileId: {
       type: Schema.Types.ObjectId,
-      ref :"UserProfile"
+      ref: "UserProfile",
     },
-    email:{
-        type:String,
-    }
-   
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "Register",
+    },
+    email: {
+      type: String,
+    },
   },
   {
     timestamps: true, // todo adds createdAt & updatedAt
-  }
+  },
 );
 
 const JobApplication = model("JobApplication", jobApplicationSchema);

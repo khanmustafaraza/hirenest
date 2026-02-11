@@ -15,7 +15,7 @@ const verifyToken = (req, res, next) => {
     const token = authorization.split(" ")[1];
 
     const decoded = jwt.verify(token, process.env.SECRET_KEY);
-    console.log(decoded)
+   
 
     req.user = decoded;
     // console.log(req.user)

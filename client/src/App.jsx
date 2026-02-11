@@ -21,6 +21,7 @@ import JobDetails from "./pages/jobdetails/JobDetails";
 import UserDashboard from "./pages/user/userdashbaord/UserDashboard";
 import UserProfile from "./pages/user/userprofile/UserProfile";
 import UserProfileById from "./pages/user/uerprofilebyid/UserProfileById";
+import ApplyJobList from "./pages/user/applyjoblist/ApplyJobList";
 // import Protected from "./routes/Protected";
 // import PostJob from "./pages/admin/postjob/PostJob";
 
@@ -42,6 +43,7 @@ const App = () => {
         <Route path = "/user-dashboard" element ={<UserDashboard/>}/>
         <Route path = "/add-user-profile" element ={<UserProfile/>}/>
         <Route path = "/user-profile-by-id" element ={<UserProfileById/>}/>
+        <Route path = "/apply-job-list" element ={<ApplyJobList/>}/>
 
         {/* ✔👀🔯 admin routes */}
         <Route path="/admin" element={<AdminRoute />}>
