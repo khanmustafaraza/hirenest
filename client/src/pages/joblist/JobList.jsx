@@ -1,13 +1,10 @@
 import React, { useEffect } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
-import {
-  FaMapMarkerAlt,
-  FaClock,
-} from "react-icons/fa";
+import { FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 import useJob from "../../store/jobcontext/JobContext";
 import "./joblist.css";
-import { NavLink } from "react-router-dom";
 
 const JobList = () => {
   const { state, getAllJobs } = useJob();
@@ -21,12 +18,28 @@ const JobList = () => {
       <Navbar />
 
       {/* HERO */}
-      <section className="jobs-hero">
-        <div className="container">
-          <h1>Open Positions</h1>
-          <p>
-            Carefully selected roles from trusted companies
-          </p>
+      <section className="jobs-hero-new">
+        <div className="container hero-container">
+          <div className="hero-left">
+            <span className="hero-badge">Trusted by 500+ Companies</span>
+            <h1 className="hero-title">
+              Explore Your <span>Dream Job</span><br />
+              From Top Companies
+            </h1>
+            <p className="hero-subtitle">
+              Discover exciting opportunities, filter by category, and apply with one click.
+            </p>
+            <NavLink to="/jobs">
+              <button className="hero-btn">Browse Jobs</button>
+            </NavLink>
+          </div>
+          <div className="hero-right">
+            <img
+              src="/assets/hero-illustration.png"
+              alt="Jobs Illustration"
+              className="hero-illustration"
+            />
+          </div>
         </div>
       </section>
 
@@ -50,9 +63,7 @@ const JobList = () => {
               <option>Job Type</option>
             </select>
 
-            <button className="filter-btn">
-              Apply Filters
-            </button>
+            <button className="filter-btn">Apply Filters</button>
           </div>
         </div>
       </section>
@@ -84,20 +95,13 @@ const JobList = () => {
                   </div>
 
                   <div className="card-tags">
-                    <span>
-                      {job.categoryName?.categoryName || "General"}
-                    </span>
-                    {job.experience && (
-                      <span>{job.experience}</span>
-                    )}
+                    <span>{job.categoryName?.categoryName || "General"}</span>
+                    {job.experience && <span>{job.experience}</span>}
                   </div>
 
                   <div className="card-bottom">
-                    <NavLink to = {`/job-details/${job._id}`}>
-
-                    <button className="card-btn">
-                      View role →
-                    </button>
+                    <NavLink to={`/job-details/${job._id}`}>
+                      <button className="card-btn">View role →</button>
                     </NavLink>
                   </div>
                 </div>
@@ -105,9 +109,7 @@ const JobList = () => {
             ))}
           </div>
         ) : (
-          <div className="empty-state">
-            No positions available
-          </div>
+          <div className="empty-state">No positions available</div>
         )}
       </section>
 

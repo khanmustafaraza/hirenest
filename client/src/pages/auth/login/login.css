@@ -1,22 +1,70 @@
 .login-section {
-  background-color: #f4f6f8;
+  min-height: 100vh;
+  /* background: linear-gradient(135deg, #f8f9fa, #e9ecef); */
+  padding: 40px 15px;
 }
 
-.login-section .form-label {
-  font-weight: 500;
-  color: #333;
+.login-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  transition: 0.3s ease;
 }
 
-.login-section .form-control {
-  border-radius: 6px;
+.login-card:hover {
+  /* transform: translateY(-5px); */
 }
 
-.login-section .btn-dark {
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: #212529;
+  color: #fff;
+  font-size: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.custom-input .input-group-text {
+  background: #f1f3f5;
+  border-right: none;
+}
+
+.custom-input .form-control {
+  border-left: none;
+}
+
+.custom-input .form-control:focus {
+  box-shadow: none;
+  border-color: #212529;
+}
+
+.password-toggle {
+  cursor: pointer;
+  background: #f1f3f5;
+}
+
+.login-btn {
   padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #343a40;
+  transform: scale(1.02);
+}
+
+.register-link {
+  text-decoration: none;
   font-weight: 600;
 }
 
-.login-section .input-group-text {
-  background: #f1f1f1;
-  border-left: none;
+.register-link:hover {
+  text-decoration: underline;
 }

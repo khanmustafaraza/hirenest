@@ -1,10 +1,14 @@
 import React from "react";
 import "./hero.css";
 import { NavLink } from "react-router-dom";
+import heroBg from "../../assets/team.jpg"; // Replace with your background image path
 
 const Hero = () => {
   return (
-    <section className="hero-section">
+    <section
+      className="hero-section"
+      style={{ backgroundImage: `url(${heroBg})` }}
+    >
       <div className="hero-overlay">
         <div className="hero-content text-center px-3">
           <span className="hero-badge">Trusted by 10,000+ Professionals</span>
@@ -21,6 +25,9 @@ const Hero = () => {
           <div className="hero-actions">
             <NavLink to="/jobs">
               <button className="hero-btn primary">Find Jobs</button>
+            </NavLink>
+            <NavLink to="/post-job">
+              <button className="hero-btn secondary">Post a Job</button>
             </NavLink>
           </div>
         </div>

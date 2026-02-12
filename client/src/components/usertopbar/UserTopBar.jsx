@@ -4,17 +4,15 @@ import "./usertopbar.css";
 
 const UserTopBar = ({ user }) => {
   return (
-    <div className="user-topbar">
-
+    <header className="user-topbar">
       {/* Left: Greeting */}
       <div className="topbar-left">
-        <h2>Welcome, {user?.name || "User"}</h2>
-        <p>Here's your dashboard overview</p>
+        <h2 className="greeting-title">Welcome, {user?.name || "User"}</h2>
+        <p className="greeting-subtitle">Here's your dashboard overview</p>
       </div>
 
       {/* Right: Actions */}
       <div className="topbar-right">
-
         {/* Search */}
         <div className="topbar-search">
           <input type="text" placeholder="Search jobs or companies..." />
@@ -22,7 +20,7 @@ const UserTopBar = ({ user }) => {
         </div>
 
         {/* Notifications */}
-        <button className="topbar-btn">
+        <button className="topbar-btn notification-btn">
           <FaBell />
           <span className="badge">3</span>
         </button>
@@ -40,9 +38,8 @@ const UserTopBar = ({ user }) => {
             <span>{user?.name?.charAt(0) || "U"}</span>
           )}
         </div>
-
       </div>
-    </div>
+    </header>
   );
 };
 

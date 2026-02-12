@@ -1,48 +1,71 @@
 .register-section {
-  background-color: white;
+  min-height: 100vh;
+  /* background: linear-gradient(135deg, #f8f9fa, #e9ecef); */
+  padding: 40px 15px;
 }
 
-.register-section h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: gray;
-  padding: 10px 0px;
-  /* border: 1px solid black; */
+.register-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 450px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 4px lightgray;
 }
 
-.register-form-container {
-  border-radius: 3px;
-  background: #fff;
-  box-shadow: 0 0px 4px lightgray;
-  max-width: 900px;
-  margin: 0 auto;
-  /* padding: 30px; */
+.register-card:hover {
+  /* transform: translateY(-5px); */
 }
 
-.input-group-text {
-  background-color: lightgray;
-  border: 1px solid #ced4da;
-  border-radius: 3px !important;
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: #212529;
+  color: #fff;
+  font-size: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
-.eye-icon {
-  background-color: transparent;
+.custom-input .input-group-text {
+  background: #f1f3f5;
+  border-right: none;
+}
+
+.custom-input .form-control {
   border-left: none;
-  color: #333;
 }
+
+.custom-input .form-control:focus {
+  box-shadow: none;
+  border-color: #212529;
+}
+
+.password-toggle {
+  cursor: pointer;
+  background: #f1f3f5;
+}
+
 .register-btn {
-  border: 0px;
-  background: #020617;
-  /* width: 100%; */
-  padding: 10px 23px;
-  border-radius: 3px;
-  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s;
 }
+
 .register-btn:hover {
-  border: 0px;
-  background: #1b6fa7;
-  /* width: 100%; */
-  padding: 10px 23px;
-  border-radius: 3px;
-  color: white;
+  background-color: #343a40;
+  transform: scale(1.02);
+}
+
+.login-link {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link:hover {
+  text-decoration: underline;
 }

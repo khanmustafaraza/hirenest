@@ -13,13 +13,14 @@ const UserLeftBar = ({ user }) => {
 
   return (
     <div className="user-leftbar">
-
       {/* Profile Card */}
       <div className="profile-card">
         {user?.profilePic ? (
           <img src={user.profilePic} alt="Profile" className="profile-pic" />
         ) : (
-          <div className="profile-placeholder">{user?.name?.charAt(0)}</div>
+          <div className="profile-placeholder">
+            {user?.name?.charAt(0)?.toUpperCase() || "U"}
+          </div>
         )}
         <h2>{user?.name || "User Name"}</h2>
         <p>{user?.email || "user@example.com"}</p>
@@ -31,7 +32,11 @@ const UserLeftBar = ({ user }) => {
           <li key={item._id}>
             <NavLink
               to={item.link}
-              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+              className={({ isActive }) =>
+                isActive
+                  ? "user-leftbar-link active"
+                  : "user-leftbar-link"
+              }
             >
               <span className="icon">{item.icon}</span>
               <span className="link-text">{item.name}</span>

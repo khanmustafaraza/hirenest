@@ -9,21 +9,21 @@ import "./footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer-bg">
-      <div className="container pt-5 pb-4">
-        <div className="row gy-4">
+    <footer className="footer">
+      <div className="container footer-container">
+        <div className="footer-top row gy-4">
+
           {/* Brand */}
           <div className="col-md-3">
             <h3 className="footer-brand">
               Hire<span>Nest</span>
             </h3>
             <p className="footer-text">
-              A modern job platform connecting ambitious talent with trusted
-              companies worldwide.
+              Connecting ambitious talent with trusted companies worldwide.
             </p>
 
             <p className="footer-email">
-              <FaEnvelope />
+              <FaEnvelope className="email-icon" />
               <a href="mailto:support@hirenest.com">support@hirenest.com</a>
             </p>
           </div>
@@ -32,18 +32,10 @@ const Footer = () => {
           <div className="col-md-3">
             <h6 className="footer-heading">Explore</h6>
             <ul className="footer-links">
-              <li>
-                <a href="/jobs">Browse Jobs</a>
-              </li>
-              <li>
-                <a href="/post-job">Post a Job</a>
-              </li>
-              <li>
-                <a href="/companies">Companies</a>
-              </li>
-              <li>
-                <a href="/about">About</a>
-              </li>
+              <li><a href="/jobs">Browse Jobs</a></li>
+              <li><a href="/post-job">Post a Job</a></li>
+              <li><a href="/companies">Companies</a></li>
+              <li><a href="/about">About</a></li>
             </ul>
           </div>
 
@@ -51,18 +43,10 @@ const Footer = () => {
           <div className="col-md-3">
             <h6 className="footer-heading">Legal</h6>
             <ul className="footer-links">
-              <li>
-                <a href="/terms">Terms</a>
-              </li>
-              <li>
-                <a href="/privacy">Privacy</a>
-              </li>
-              <li>
-                <a href="/faq">FAQs</a>
-              </li>
-              <li>
-                <a href="/contact">Contact</a>
-              </li>
+              <li><a href="/terms">Terms</a></li>
+              <li><a href="/privacy">Privacy</a></li>
+              <li><a href="/faq">FAQs</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
 
@@ -75,7 +59,7 @@ const Footer = () => {
 
             <div className="newsletter-box">
               <input type="email" placeholder="Email address" />
-              <button>Subscribe</button>
+              <button className="newsletter-btn">Subscribe</button>
             </div>
           </div>
         </div>
@@ -83,19 +67,13 @@ const Footer = () => {
         <div className="footer-divider"></div>
 
         {/* Bottom */}
-        <div className="footer-bottom">
+        <div className="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
           <p>© 2025 HireNest. All rights reserved.</p>
 
           <div className="social-icons">
-            <a href="#">
-              <FaFacebookF />
-            </a>
-            <a href="#">
-              <FaInstagram />
-            </a>
-            <a href="#">
-              <FaLinkedinIn />
-            </a>
+            <a href="#"><FaFacebookF /></a>
+            <a href="#"><FaInstagram /></a>
+            <a href="#"><FaLinkedinIn /></a>
           </div>
         </div>
       </div>

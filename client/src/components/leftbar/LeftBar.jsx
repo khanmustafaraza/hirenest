@@ -16,21 +16,11 @@ import "./leftbar.css";
 
 const navLinks = [
   { to: "/admin/admin-dashboard", label: "Dashboard", icon: FaTachometerAlt },
-  {
-    to: "/admin/add-job-category",
-    label: "Add Job Category",
-    icon: MdCategory,
-  },
-  {
-    to: "/admin/job-category-list",
-    label: "Job Category List",
-    icon: IoMdList,
-  },
+  { to: "/admin/add-job-category", label: "Add Job Category", icon: MdCategory },
+  { to: "/admin/job-category-list", label: "Job Category List", icon: IoMdList },
   { to: "/admin/add-post", label: "Add Job", icon: FaPlus },
-    { to: "/admin/admin-job-list", label: "Jobs List", icon: FaBriefcase },
+  { to: "/admin/admin-job-list", label: "Jobs List", icon: FaBriefcase },
   { to: "/admin/users", label: "Users", icon: FaUsers },
-
-
   { to: "/admin/saved-posts", label: "Saved", icon: FaBookmark },
   { to: "/admin/register-user", label: "Registrations", icon: FaRegRegistered },
   { to: "/admin/applications", label: "Applications", icon: FaTags },
@@ -38,23 +28,24 @@ const navLinks = [
 
 const LeftBar = () => {
   return (
-    <aside className="leftbar bg-dark text-light">
+    <aside className="leftbar">
       {/* Brand */}
-      <div className="leftbar-brand text-center py-2 border-bottom">
-        <h5 className="mb-0 fw-bold">
-          Hire<span className="text-info">Nest</span>
+      <div className="leftbar-brand">
+        <h5>
+          Hire<span>Nest</span>
         </h5>
       </div>
 
       {/* Navigation */}
-      <nav className="leftbar-nav nav flex-column py-3">
+      <nav className="leftbar-nav">
         {navLinks.map(({ to, label, icon: Icon }) => (
           <NavLink
             key={to}
             to={to}
             className={({ isActive }) =>
-              `nav-link d-flex align-items-center gap-2 px-3 py-2 mb-1 rounded 
-              ${isActive ? "active-link" : "text-light"}`
+              isActive
+                ? "admin-leftbar-link active"
+                : "admin-leftbar-link"
             }
           >
             <Icon className="nav-icon" />
@@ -64,8 +55,8 @@ const LeftBar = () => {
       </nav>
 
       {/* Logout */}
-      <div className="leftbar-footer border-top p-3">
-        <button className="btn btn-outline-danger w-100 d-flex align-items-center gap-2">
+      <div className="leftbar-footer">
+        <button className="logout-btn">
           <FaSignOutAlt />
           Logout
         </button>

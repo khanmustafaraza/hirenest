@@ -1,35 +1,34 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 import "./navbar.css";
-// import { useAuth } from "../../context/AuthContext";
 
 const Navbar = () => {
-  // const { state } = useAuth();
-
   return (
     <nav className="navbar navbar-expand-lg hirenest-navbar fixed-top">
-      <div className="container-fluid px-4">
+      <div className="container">
         {/* Brand */}
         <NavLink to="/" className="navbar-brand hirenest-brand">
           Hire<span>Nest</span>
         </NavLink>
 
-        {/* Toggle */}
+        {/* Toggle Button */}
         <button
-          className="navbar-toggler shadow-none"
+          className="navbar-toggler shadow-none border-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         {/* Menu */}
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto align-items-center gap-4">
+          <ul className="navbar-nav mx-auto align-items-center gap-lg-4">
             <li className="nav-item">
-              <NavLink to="/" className="nav-link">
+              <NavLink to="/" end className="nav-link">
                 Home
               </NavLink>
             </li>
@@ -47,21 +46,11 @@ const Navbar = () => {
             </li>
 
             <li className="nav-item">
-              <NavLink to="/contact" className="nav-link">
-                Contact
+              <NavLink to="/login" className="nav-link login-btn-nav">
+                Login
               </NavLink>
             </li>
           </ul>
-
-          {/* Search */}
-          {/* <form className="d-flex hirenest-search">
-            <input
-              type="search"
-              className="form-control"
-              placeholder="Search jobs, skills..."
-            />
-            <button className="btn">Search</button>
-          </form> */}
         </div>
       </div>
     </nav>
