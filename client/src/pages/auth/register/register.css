@@ -3,15 +3,28 @@
   /* background: linear-gradient(135deg, #f8f9fa, #e9ecef); */
   padding: 40px 15px;
 }
-
+.register-header {
+  background-color: var(--primary-blue);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding: 4px;
+  
+}
 .register-card {
+  box-shadow: 0 0 4px lightgray;
+   max-width: 450px;
+  /* border: 1px solid black;
+  max-width:  450px; */
+}
+.register-form-container {
   background: #ffffff;
-  padding: 40px;
+  /* padding: 4px; */
   border-radius: 5px;
   width: 100%;
   max-width: 450px;
   transition: 0.3s ease;
-  box-shadow: 0 0 4px lightgray;
+  /* box-shadow: 0 0 4px lightgray; */
+  padding: 0px 23px;
 }
 
 .register-card:hover {
@@ -21,8 +34,8 @@
 .icon-wrapper {
   width: 70px;
   height: 70px;
-  background: #212529;
-  color: #fff;
+  background: white;
+  color: gray;
   font-size: 28px;
   border-radius: 50%;
   display: flex;
@@ -52,8 +65,9 @@
 
 .register-btn {
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 4px;
   transition: 0.3s;
+   background-color: var(--primary-blue) !important;
 }
 
 .register-btn:hover {

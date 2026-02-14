@@ -2,6 +2,7 @@ import React from "react";
 import "./about.css";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
+import { FiUsers, FiTrendingUp, FiShield, FiZap } from "react-icons/fi";
 
 const About = () => {
   return (
@@ -9,79 +10,88 @@ const About = () => {
       <Navbar />
 
       {/* HERO */}
-      <section className="about-hero mt-60">
+      <section className="about-hero">
         <div className="container text-center">
           <h1>
-            About <span>JobFinder</span>
+            HireNest: The Future of <span>Hiring</span>
           </h1>
           <p>
-            JobFinder is a modern hiring platform helping professionals connect
-            with trusted companies and meaningful opportunities.
+            Connecting ambitious professionals with innovative companies —
+            fast, secure, and effortless.
+          </p>
+          <div className="hero-buttons">
+            <a href="/register" className="primary-btn">
+              Get Started
+            </a>
+            <a href="/job-list" className="secondary-btn">
+              Browse Jobs
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section className="about-features">
+        <div className="container">
+          <div className="section-heading text-center">
+            <h2>Why HireNest?</h2>
+            <p>Designed to make your hiring journey smooth, fast, and reliable.</p>
+          </div>
+
+          <div className="row g-4 mt-4">
+            <div className="col-md-3">
+              <div className="feature-card">
+                <FiUsers size={32} />
+                <h5>Verified Employers</h5>
+                <p>Every company is reviewed to ensure authenticity.</p>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="feature-card">
+                <FiZap size={32} />
+                <h5>One-Click Apply</h5>
+                <p>Fast applications without unnecessary steps.</p>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="feature-card">
+                <FiShield size={32} />
+                <h5>Privacy First</h5>
+                <p>Your data is secure and fully protected.</p>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="feature-card">
+                <FiTrendingUp size={32} />
+                <h5>Smart Matching</h5>
+                <p>We connect you with opportunities that fit your profile.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MISSION */}
+      <section className="about-mission">
+        <div className="container text-center">
+          <h2>Our Mission</h2>
+          <p>
+            To eliminate friction from hiring and empower professionals to find
+            work that aligns with their skills and ambitions.
           </p>
         </div>
       </section>
 
-      {/* WHY */}
-      <section className="about-section">
-        <div className="container">
-          <div className="row align-items-center g-5">
-            <div className="col-md-6">
-              <h3>Why JobFinder?</h3>
-              <p className="muted">
-                We focus on simplicity, transparency, and speed — making job
-                discovery effortless for candidates and hiring teams.
-              </p>
-
-              <ul className="about-list">
-                <li>Verified companies & real jobs</li>
-                <li>Fast applications, no clutter</li>
-                <li>Built for modern professionals</li>
-                <li>Privacy-first approach</li>
-              </ul>
-            </div>
-
-            <div className="col-md-6">
-              <img src="/team.jpg" alt="Team" className="about-image" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* VALUES */}
-      <section className="about-values">
-        <div className="container">
-          <div className="row g-4 text-center">
-            <div className="col-md-4">
-              <h5>Mission</h5>
-              <p>
-                Enable professionals to find work that aligns with their skills
-                and ambitions.
-              </p>
-            </div>
-
-            <div className="col-md-4">
-              <h5>Trust</h5>
-              <p>
-                Every company and listing is reviewed to ensure authenticity.
-              </p>
-            </div>
-
-            <div className="col-md-4">
-              <h5>Focus</h5>
-              <p>
-                No distractions. Just meaningful jobs and clear hiring signals.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* PROCESS */}
-      <section className="about-steps">
-        <div className="container text-center">
-          <h3>How It Works</h3>
-
-          <div className="row g-4 mt-4">
+      <section className="about-process">
+        <div className="container">
+          <div className="section-heading text-center">
+            <h2>How It Works</h2>
+          </div>
+          <div className="row g-4 mt-4 text-center">
             {[
               "Create your profile",
               "Discover relevant jobs",
@@ -102,10 +112,10 @@ const About = () => {
       {/* CTA */}
       <section className="about-cta">
         <div className="container text-center">
-          <h3>Start your next chapter</h3>
-          <p>Join professionals discovering better career opportunities.</p>
-          <a href="/register" className="cta-btn">
-            Get Started
+          <h2>Start your next chapter today</h2>
+          <p>Join thousands discovering better career opportunities.</p>
+          <a href="/register" className="primary-btn white">
+            Start Your Journey
           </a>
         </div>
       </section>

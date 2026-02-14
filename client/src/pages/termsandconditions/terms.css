@@ -1,0 +1,70 @@
+:root {
+  --primary-blue: #7d9cc5;
+  --primary-blue-hover: #408ae4;
+}
+
+/* Main container */
+.terms-page {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.terms-page .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Title & Intro */
+.terms-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.terms-intro {
+  font-size: 1rem;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Sections */
+.terms-section {
+  margin-bottom: 35px;
+  border-left: 3px solid var(--primary-blue);
+  padding-left: 15px;
+}
+
+.terms-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.terms-section p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.terms-section a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.terms-section a:hover {
+  color: var(--primary-blue-hover);
+  text-decoration: underline;
+}
+
+/* Optional: Numbered sections */
+.terms-section::before {
+  content: counter(section) ". ";
+  counter-increment: section;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-right: 5px;
+}

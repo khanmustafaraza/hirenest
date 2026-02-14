@@ -1,125 +1,120 @@
+:root {
+  --primary-blue: #0b1a2d;
+  --primary-blue-hover: #142d4c;
+}
+
 /* HERO */
 .about-hero {
-  padding: 100px 0 70px;
-  background: #ffffff;
+  padding: 120px 0 80px;
+  text-align: center;
 }
 
 .about-hero h1 {
-  font-size: 2.6rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-size: 3rem;
+  font-weight: 800;
 }
 
-.about-hero span {
-  color: #020617;
+.about-hero h1 span {
+  color: var(--primary-blue);
 }
 
 .about-hero p {
-  max-width: 520px;
-  margin: 14px auto 0;
-  font-size: 1rem;
-  color: #64748b;
+  color: #6c757d;
+  margin: 20px 0 30px;
 }
 
-/* SECTION */
-.about-section {
-  padding: 80px 0;
-}
-
-.about-section h3 {
-  font-size: 1.4rem;
+.hero-buttons a {
+  display: inline-block;
+  padding: 12px 36px;
+  border-radius: 50px;
   font-weight: 600;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s ease;
 }
 
-.muted {
-  color: #64748b;
-  margin-top: 10px;
+.primary-btn {
+  background: var(--primary-blue);
+  color: #fff;
 }
 
-.about-list {
-  margin-top: 18px;
-  padding-left: 18px;
-  color: #475569;
+.primary-btn:hover {
+  background: var(--primary-blue-hover);
 }
 
-.about-list li {
-  margin-bottom: 8px;
+.secondary-btn {
+  border: 1px solid var(--primary-blue);
+  color: var(--primary-blue);
 }
 
-/* IMAGE */
-.about-image {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
+.secondary-btn:hover {
+  background: var(--primary-blue);
+  color: #fff;
 }
 
-/* VALUES */
-.about-values {
-  padding: 70px 0;
-  background: #f8fafc;
+/* FEATURES CARDS */
+.feature-card {
+  background: #fff;
+  padding: 35px 20px;
+  border-radius: 16px;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.about-values h5 {
-  font-size: 1rem;
-  font-weight: 600;
+.feature-card svg {
+  color: var(--primary-blue);
+  margin-bottom: 15px;
 }
 
-.about-values p {
-  font-size: 0.9rem;
-  color: #64748b;
+.feature-card h5 {
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-/* STEPS */
-.about-steps {
-  padding: 80px 0;
+.feature-card p {
+  color: #495057;
 }
 
-.about-steps h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
+.feature-card:hover {
+  transform: translateY(-8px);
 }
 
+/* PROCESS STEPS */
 .step-box {
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 26px 18px;
+  background: #fff;
+  padding: 30px 15px;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
 }
 
 .step-box span {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  display: block;
-  margin-bottom: 6px;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+  margin-bottom: 10px;
 }
 
 .step-box p {
-  font-size: 0.9rem;
   margin: 0;
+  color: #495057;
+}
+
+.step-box:hover {
+  transform: translateY(-8px);
 }
 
 /* CTA */
 .about-cta {
-  padding: 90px 0;
-  background: #020617;
-  color: #ffffff;
+  padding: 80px 0;
+  background: var(--primary-blue);
+  color: #fff;
+  text-align: center;
 }
 
-.about-cta h3 {
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-.about-cta p {
-  color: #cbd5f5;
-  margin: 10px 0 24px;
-}
-
-.cta-btn {
-  background: #ffffff;
-  color: #020617;
-  padding: 10px 22px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
+.about-cta a.white {
+  background: #fff;
+  color: var(--primary-blue);
 }

@@ -1,34 +1,26 @@
 /* ============================= */
-/* Navbar Wrapper */
-/* ============================= */
-
+/* Navbar Base */
 .hirenest-navbar {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: 0.3s ease;
   padding: 8px 0;
 }
 
-/* ============================= */
-/* Brand Styling */
-/* ============================= */
-
+/* Brand */
 .hirenest-navbar .hirenest-brand {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #212529 !important;
+  color: var(--text-dark) !important;
   letter-spacing: 0.5px;
 }
 
 .hirenest-navbar .hirenest-brand span {
-  color: #0d6efd;
+  color: var(--primary-blue);
 }
 
-/* ============================= */
-/* Nav Links (Scoped) */
-/* ============================= */
-
+/* Nav Links */
 .hirenest-navbar .nav-link {
   font-weight: 500;
   color: #495057 !important;
@@ -37,7 +29,6 @@
   padding: 6px 8px;
 }
 
-/* Underline Animation */
 .hirenest-navbar .nav-link::after {
   content: "";
   position: absolute;
@@ -45,7 +36,7 @@
   height: 2px;
   left: 0;
   bottom: -4px;
-  background-color: #0d6efd;
+  background-color: var(--primary-blue);
   transition: width 0.3s ease;
 }
 
@@ -54,38 +45,31 @@
 }
 
 .hirenest-navbar .nav-link:hover {
-  color: #0d6efd !important;
+  color: var(--primary-blue) !important;
 }
 
-/* Active Route */
 .hirenest-navbar .nav-link.active {
-  color: #0d6efd !important;
+  color: var(--primary-blue) !important;
   font-weight: 600;
 }
 
-/* ============================= */
 /* Login Button */
-/* ============================= */
-
 .hirenest-navbar .login-btn-nav {
-  background: #111213;
+  background: var(--primary-blue);
   color: #fff !important;
-  padding: 6px 33px;
-  border-radius: 3px;
+  padding: 8px 28px;
+  border-radius: 30px;
   transition: 0.3s ease;
-  width: 80px;
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .hirenest-navbar .login-btn-nav:hover {
-  background: #0b5ed7;
+  background: var(--primary-blue-hover);
   transform: translateY(-2px);
 }
 
-/* ============================= */
 /* Mobile Toggle Icon */
-/* ============================= */
-
 .hirenest-navbar .navbar-toggler-icon {
   filter: invert(0.4);
 }

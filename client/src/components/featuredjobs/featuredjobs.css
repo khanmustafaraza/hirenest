@@ -1,54 +1,92 @@
-.featured-jobs-saas {
-  background: #fafafa;
-  padding: 80px 0;
+:root {
+  --primary-blue: #7d9cc5;
+  --primary-blue-hover: #408ae4;
 }
 
-.featured-job-saas {
-  background: #fffaf5;
-  border: 1px solid rgba(139, 94, 60, 0.35);
-  border-radius: 14px;
-  padding: 28px;
-  transition: all 0.3s ease;
+/* SECTION */
+.featured-jobs-premium {
+  padding: 60px 0;
+  background: #f9fafb;
 }
 
-.featured-job-saas:hover {
-  border-color: #8b5e3c;
+.section-header-premium h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
 }
 
-.top-row {
+.section-header-premium p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* FEATURED JOB CARD */
+.featured-job-card-premium {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.featured-job-card-premium:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* TOP ROW */
+.top-row-premium {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.pill {
-  font-size: 0.7rem;
+.top-row-premium h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.pill-premium {
+  background: var(--primary-blue);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
   padding: 4px 10px;
   border-radius: 20px;
-  background: rgba(139, 94, 60, 0.15);
-  color: #8b5e3c;
 }
 
-.company {
-  font-size: 0.9rem;
-  color: #374151;
-  margin: 10px 0;
+/* COMPANY */
+.company-premium {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
 }
 
-.meta {
+/* META */
+.meta-premium {
   display: flex;
   justify-content: space-between;
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 15px;
 }
 
-.primary-btn {
-  background: #8b5e3c;
+/* BUTTON */
+.primary-btn-premium {
+  background: var(--primary-blue);
   color: #fff;
   border: none;
   padding: 10px 22px;
-  border-radius: 6px;
-  font-size: 0.85rem;
+  border-radius: 25px;
+  font-weight: 600;
   cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+}
+
+.primary-btn-premium:hover {
+  background: var(--primary-blue-hover);
 }

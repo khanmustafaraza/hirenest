@@ -29,36 +29,31 @@ const navLinks = [
 const LeftBar = () => {
   return (
     <aside className="leftbar">
-      {/* Brand */}
       <div className="leftbar-brand">
         <h5>
           Hire<span>Nest</span>
         </h5>
       </div>
 
-      {/* Navigation */}
       <nav className="leftbar-nav">
         {navLinks.map(({ to, label, icon: Icon }) => (
           <NavLink
             key={to}
             to={to}
             className={({ isActive }) =>
-              isActive
-                ? "admin-leftbar-link active"
-                : "admin-leftbar-link"
+              isActive ? "link active" : "link"
             }
           >
-            <Icon className="nav-icon" />
+            <Icon className="leftbar-icon" />
             <span>{label}</span>
           </NavLink>
         ))}
       </nav>
 
-      {/* Logout */}
       <div className="leftbar-footer">
         <button className="logout-btn">
           <FaSignOutAlt />
-          Logout
+          <span>Logout</span>
         </button>
       </div>
     </aside>

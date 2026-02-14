@@ -1,86 +1,55 @@
-.job-categories {
+:root {
+  --primary-blue: #7d9cc5;
+  --primary-blue-hover: #408ae4;
+}
+
+/* SECTION */
+.job-categories-premium {
   padding: 60px 0;
-  background-color: #f8f9fa;
-  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
 }
 
-.section-header h2 {
-  font-size: 28px;
+.section-header-premium h2 {
+  font-size: 2rem;
   font-weight: 700;
-  color: #212529;
+  color: #111827;
+  margin-bottom: 10px;
 }
 
-.section-header p {
-  font-size: 16px;
-  color: #6c757d;
+.section-header-premium p {
+  color: #6b7280;
+  font-size: 1rem;
 }
 
-.category-card {
-  background-color: #ffffff;
+/* CATEGORY CARDS */
+.category-card-premium {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 15px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  padding: 30px 20px;
-  transition: all 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
 }
 
-.category-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    135deg,
-    #0d6efd 0%,
-    #6610f2 50%,
-    #0dcaf0 100%
-  );
-  opacity: 0;
-  transition: all 0.4s ease;
-  z-index: 0;
-  transform: rotate(45deg);
-}
-
-.category-card:hover::before {
-  opacity: 0.15;
-}
-
-.category-card:hover {
+.category-card-premium:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-.category-icon {
-  font-size: 36px;
-  color: #0d6efd;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease, color 0.3s ease;
-  z-index: 1;
-  position: relative;
+/* ICON */
+.category-icon-premium {
+  font-size: 2rem;
+  color: var(--primary-blue);
+  margin-bottom: 12px;
 }
 
-.category-card:hover .category-icon {
-  transform: scale(1.2) rotate(10deg);
-  color: #6610f2;
-}
-
-.category-name {
-  display: block;
-  font-size: 16px;
+/* CATEGORY NAME */
+.category-name-premium {
   font-weight: 600;
-  color: #212529;
-  z-index: 1;
-  position: relative;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .category-card {
-    padding: 20px 15px;
-  }
+  color: #111827;
+  font-size: 1rem;
+  text-align: center;
 }

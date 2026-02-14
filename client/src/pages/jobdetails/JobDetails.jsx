@@ -44,97 +44,85 @@ const JobDetails = () => {
     <>
       <Navbar />
 
-      {/* Hero Banner */}
-      <section className="job-hero-banner">
-        <div className="container hero-inner">
-          <h1>{job.jobTitle}</h1>
-          <p className="company-name">
-            <a href={job.companyWebLink} target="_blank" rel="noreferrer">
-              {job.companyName}
-            </a>
-          </p>
-          <div className="job-info-chips">
-            {job.categoryName && <span><FaTag /> {job.categoryName}</span>}
-            {job.jobLocation && <span><FaMapMarkerAlt /> {job.jobLocation}</span>}
-            {job.jobType && <span><FaBriefcase /> {job.jobType}</span>}
-            {job.salary && <span><FaDollarSign /> {job.salary}</span>}
-            {job.experience && <span>Experience: {job.experience}</span>}
-            {job.applicationDeadline && (
-              <span><FaClock /> {new Date(job.applicationDeadline).toLocaleDateString()}</span>
-            )}
+      {/* HERO SECTION */}
+      <section className="job-hero-premium">
+        <div className="container hero-inner-premium">
+          <div className="hero-text-premium">
+            <h1>{job.jobTitle}</h1>
+            <p className="company-name-premium">
+              <a href={job.companyWebLink} target="_blank" rel="noreferrer">
+                {job.companyName}
+              </a>
+            </p>
+            <div className="job-chips-premium">
+              {job.categoryName && <span><FaTag /> {job.categoryName}</span>}
+              {job.jobLocation && <span><FaMapMarkerAlt /> {job.jobLocation}</span>}
+              {job.jobType && <span><FaBriefcase /> {job.jobType}</span>}
+              {job.salary && <span><FaDollarSign /> {job.salary}</span>}
+              {job.experience && <span>Experience: {job.experience}</span>}
+              {job.applicationDeadline && (
+                <span><FaClock /> {new Date(job.applicationDeadline).toLocaleDateString()}</span>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
-      <div className="container job-cards-layout">
-        {/* Job Description */}
+      {/* JOB DETAILS CARDS */}
+      <div className="container job-details-cards">
         {job.jobDescription?.length > 0 && (
-          <section className="job-card">
+          <section className="job-card-premium">
             <h3>Job Description</h3>
-            {job.jobDescription.map((desc, i) => (
-              <p key={i}>{desc}</p>
-            ))}
+            {job.jobDescription.map((desc, i) => <p key={i}>{desc}</p>)}
           </section>
         )}
 
-        {/* Responsibilities */}
         {job.responsibilities?.length > 0 && (
-          <section className="job-card">
+          <section className="job-card-premium">
             <h3>Responsibilities</h3>
             <ul>
-              {job.responsibilities.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
+              {job.responsibilities.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
           </section>
         )}
 
-        {/* Requirements */}
         {job.requirements?.length > 0 && (
-          <section className="job-card">
+          <section className="job-card-premium">
             <h3>Requirements</h3>
             <ul>
-              {job.requirements.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
+              {job.requirements.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
           </section>
         )}
 
-        {/* Skills */}
         {job.skills?.length > 0 && (
-          <section className="job-card">
+          <section className="job-card-premium">
             <h3>Skills</h3>
-            <div className="skills-tags">
-              {job.skills.map((skill, i) => (
-                <span key={i} className="tag">{skill}</span>
-              ))}
+            <div className="tags-premium">
+              {job.skills.map((skill, i) => <span key={i} className="tag">{skill}</span>)}
             </div>
           </section>
         )}
 
-        {/* Tags */}
         {job.tags?.length > 0 && (
-          <section className="job-card">
+          <section className="job-card-premium">
             <h3>Tags</h3>
-            <div className="skills-tags">
-              {job.tags.map((tag, i) => (
-                <span key={i} className="tag">{tag}</span>
-              ))}
+            <div className="tags-premium">
+              {job.tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}
             </div>
           </section>
         )}
 
-        {/* Contact & Actions */}
-        <section className="job-card job-action-card">
+        {/* ACTIONS */}
+        <section className="job-card-premium job-actions-premium">
           {job.contactEmail && (
             <p>Contact: <a href={`mailto:${job.contactEmail}`}>{job.contactEmail}</a></p>
           )}
-          <div className="actions-buttons">
-            <button className="apply-btn" onClick={() => userAppliedJobApplication(job._id)}>
+          <div className="actions-buttons-premium">
+            <button className="apply-btn-premium" onClick={() => userAppliedJobApplication(job._id)}>
               Apply Now
             </button>
-            <button className="save-btn" onClick={saveJob}>
+            <button className="save-btn-premium" onClick={saveJob}>
               <FaBookmark /> Save
             </button>
           </div>

@@ -18,98 +18,73 @@ const JobList = () => {
       <Navbar />
 
       {/* HERO */}
-      <section className="jobs-hero-new">
-        <div className="container hero-container">
+      <section className="jobs-hero-minimal">
+        <div className="container hero-minimal-container">
           <div className="hero-left">
-            <span className="hero-badge">Trusted by 500+ Companies</span>
-            <h1 className="hero-title">
-              Explore Your <span>Dream Job</span><br />
-              From Top Companies
+            <h1>
+              Find Your <span>Next Job</span>
             </h1>
-            <p className="hero-subtitle">
-              Discover exciting opportunities, filter by category, and apply with one click.
+            <p>
+              Explore verified opportunities from top companies. Quick search, clean layout, easy apply.
             </p>
-            <NavLink to="/jobs">
-              <button className="hero-btn">Browse Jobs</button>
-            </NavLink>
           </div>
           <div className="hero-right">
             <img
-              src="/assets/hero-illustration.png"
+              src="https://www.transparentpng.com/thumb/jobs/jobs-images-png-26.png"
               alt="Jobs Illustration"
-              className="hero-illustration"
+              className="hero-image"
             />
           </div>
         </div>
       </section>
 
-      {/* FILTER BAR */}
-      <section className="jobs-filters">
-        <div className="container">
-          <div className="filters-wrapper">
-            <select>
-              <option>Category</option>
-            </select>
-
-            <select>
-              <option>Location</option>
-            </select>
-
-            <select>
-              <option>Experience</option>
-            </select>
-
-            <select>
-              <option>Job Type</option>
-            </select>
-
-            <button className="filter-btn">Apply Filters</button>
-          </div>
+      {/* FILTERS */}
+      <section className="jobs-filters-minimal">
+        <div className="container filters-minimal-container">
+          <input type="text" placeholder="Search jobs..." className="filter-input" />
+          <select><option>Category</option></select>
+          <select><option>Location</option></select>
+          <select><option>Experience</option></select>
+          <select><option>Job Type</option></select>
+          <button className="filter-btn-minimal">Apply</button>
         </div>
       </section>
 
       {/* JOB GRID */}
-      <section className="container jobs-grid-section">
+      <section className="jobs-grid-minimal container">
         {state.jobs.length > 0 ? (
-          <div className="row g-4">
+          <div className="grid-minimal">
             {state.jobs.map((job) => (
-              <div className="col-md-6" key={job._id}>
-                <div className="exclusive-job-card">
-                  <div className="card-top">
-                    <div>
-                      <h5>{job.jobTitle}</h5>
-                      <p>
-                        {job.companyName} · {job.jobType}
-                      </p>
-                    </div>
-
-                    <span className="status">
-                      <FaClock /> Hiring
-                    </span>
+              <div className="job-card-minimal" key={job._id}>
+                <div className="card-top-minimal">
+                  <div className="company-logo-minimal">{job.companyName[0]}</div>
+                  <div>
+                    <h5>{job.jobTitle}</h5>
+                    <p>{job.companyName} · {job.jobType}</p>
                   </div>
-
-                  <div className="card-middle">
-                    <span>
-                      <FaMapMarkerAlt /> {job.jobLocation}
-                    </span>
-                  </div>
-
-                  <div className="card-tags">
-                    <span>{job.categoryName?.categoryName || "General"}</span>
-                    {job.experience && <span>{job.experience}</span>}
-                  </div>
-
-                  <div className="card-bottom">
-                    <NavLink to={`/job-details/${job._id}`}>
-                      <button className="card-btn">View role →</button>
-                    </NavLink>
-                  </div>
+                  <span className="status-minimal"><FaClock /> Hiring</span>
+                </div>
+                <div className="card-middle-minimal">
+                  <FaMapMarkerAlt /> {job.jobLocation}
+                </div>
+                <div className="card-tags-minimal">
+                  <span>{job.categoryName?.categoryName || "General"}</span>
+                  {job.experience && <span>{job.experience}</span>}
+                </div>
+                <div className="card-bottom-minimal">
+                  <NavLink to={`/job-details/${job._id}`}>
+                    <button className="card-btn-minimal">View Role →</button>
+                  </NavLink>
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="empty-state">No positions available</div>
+          <div className="empty-minimal">
+            <img src="/assets/empty-jobs.svg" alt="No Jobs" />
+            <h3>No Jobs Available</h3>
+            <p>Check back soon for new opportunities!</p>
+          </div>
         )}
       </section>
 

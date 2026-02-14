@@ -20,30 +20,30 @@ const featuredJobs = [
 
 const FeaturedJobs = () => {
   return (
-    <section className="featured-jobs-saas">
+    <section className="featured-jobs-premium">
       <div className="container">
-        <div className="section-header text-center">
+        <div className="section-header-premium text-center mb-5">
           <h2>Featured Opportunities</h2>
           <p>Curated roles from companies hiring immediately</p>
         </div>
 
-        <div className="row">
+        <div className="row g-4">
           {featuredJobs.map((job, i) => (
-            <div key={i} className="col-md-6 mb-4">
-              <div className="featured-job-saas">
-                <div className="top-row">
+            <div key={i} className="col-md-6">
+              <div className="featured-job-card-premium">
+                <div className="top-row-premium">
                   <h5>{job.title}</h5>
-                  <span className="pill">{job.type}</span>
+                  <span className="pill-premium">{job.type}</span>
                 </div>
 
-                <p className="company">{job.company}</p>
+                <p className="company-premium">{job.company}</p>
 
-                <div className="meta">
+                <div className="meta-premium">
                   <span>{job.location}</span>
                   <span>{job.salary}</span>
                 </div>
 
-                <button className="primary-btn">View role</button>
+                <button className="primary-btn-premium">View Role</button>
               </div>
             </div>
           ))}

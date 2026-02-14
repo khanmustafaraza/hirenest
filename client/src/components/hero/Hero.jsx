@@ -1,39 +1,40 @@
 import React from "react";
 import "./hero.css";
 import { NavLink } from "react-router-dom";
-import heroBg from "../../assets/team.jpg"; // Replace with your background image path
+import heroBg from "../../assets/team.jpg"; // background image
 
 const Hero = () => {
   return (
     <section
-      className="hero-section"
+      className="hero-section-premium"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
-      <div className="hero-overlay">
-        <div className="hero-content text-center px-3">
-          <span className="hero-badge">Trusted by 10,000+ Professionals</span>
+      <div className="hero-overlay-premium">
+        <div className="hero-content-premium text-center">
+          <span className="hero-badge-premium">
+            Trusted by 10,000+ Professionals
+          </span>
 
-          <h1 className="hero-title">
-            Build Your <span>Future</span> <br /> With the Right Opportunity
+          <h1 className="hero-title-premium">
+            Build Your <span>Future</span> <br />
+            With the Right Opportunity
           </h1>
 
-          <p className="hero-subtitle">
-            Discover verified jobs from top companies. Apply faster, track
-            progress, and get hired with confidence.
+          <p className="hero-subtitle-premium">
+            Discover verified jobs from top companies. Apply faster, track progress, and get hired with confidence.
           </p>
 
-          <div className="hero-actions">
-            <NavLink to="/jobs">
-              <button className="hero-btn primary">Find Jobs</button>
+          <div className="hero-actions-premium">
+            <NavLink to="/job-list">
+              <button className="hero-btn-premium primary-btn">Find Jobs</button>
             </NavLink>
-            <NavLink to="/post-job">
-              <button className="hero-btn secondary">Post a Job</button>
-            </NavLink>
+           
           </div>
         </div>
       </div>
 
-      <div className="hero-divider">
+      {/* SVG Divider */}
+      <div className="hero-divider-premium">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"

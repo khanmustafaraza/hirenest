@@ -1,94 +1,97 @@
-/* =============================== */
-/* Sidebar Container */
-/* =============================== */
-
-.leftbar {
-  width: 260px;
-  min-height: 100vh;
-  background: transparent; /* removed dark bg */
-  color: #212529;
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid #e9ecef; /* soft divider */
+:root {
+  --primary-blue: #7d9cc5;
+  --primary-blue-hover: #408ae4;
+  --text-dark: #111827;
+  --bg-sidebar: #ffffff;
+  --border-light: #e5e7eb;
 }
 
-/* =============================== */
-/* Brand */
-/* =============================== */
+/* Sidebar base */
+.leftbar {
+  width: 220px;
+  height: 100vh;
+  background: var(--bg-sidebar);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  border-right: 1px solid var(--border-light);
+  /* padding: 12px; */
+  font-family: "Inter", sans-serif;
+}
 
+/* Brand */
 .leftbar-brand {
   text-align: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid lightgray;
+  padding: 18px 0;
+  /* margin-bottom: 20px; */
 }
 
 .leftbar-brand h5 {
-  font-weight: 700;
-  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
 }
 
-.leftbar-brand span {
-  color: #0d6efd;
+.leftbar-brand h5 span {
+  color: var(--primary-blue);
 }
 
-/* =============================== */
-/* Navigation */
-/* =============================== */
-
+/* Navigation links */
 .leftbar-nav {
   display: flex;
   flex-direction: column;
-  padding: 15px;
-  gap: 6px;
+  padding: 13px;
+  /* border: 2px solid green; */
 }
 
-/* Clean link style */
-.admin-leftbar-link {
+.link {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   padding: 10px 14px;
-  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--text-dark);
   text-decoration: none;
-  color: #495057;
-  transition: all 0.3s ease;
-  font-size: 14px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
 }
 
-.admin-leftbar-link:hover {
-  color: #0d6efd;
+.link:hover {
+  background: var(--primary-blue-hover);
+  color: #fff;
 }
 
-.admin-leftbar-link.active {
-  color: #0d6efd;
-  font-weight: 600;
+.link.active {
+  background: var(--primary-blue);
+  color: #fff;
 }
 
-/* =============================== */
-/* Footer */
-/* =============================== */
+.leftbar-icon {
+  font-size: 1rem;
+  color: #ef4444;
+}
 
+/* Footer / logout */
 .leftbar-footer {
-  margin-top: auto;
-  padding: 20px;
-  border-top: 1px solid #e9ecef;
+  padding: 8px 14px;
 }
 
 .logout-btn {
-  width: 100%;
-  background: transparent;
-  border: 1px solid #dc3545;
-  color: #dc3545;
-  padding: 8px;
-  border-radius: 6px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: 0.3s;
+  gap: 6px;
+  padding: 6px 0;
+  font-size: 0.875rem;
+  width: 100%;
+  background: #f87171; /* subtle red */
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.2s;
 }
 
 .logout-btn:hover {
-  background: #dc3545;
-  color: #fff;
+  background: #ef4444;
 }

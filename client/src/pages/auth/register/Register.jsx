@@ -23,17 +23,18 @@ const Register = () => {
       <Navbar />
       <section className="register-section d-flex align-items-center justify-content-center">
         <div className="register-card">
-          <div className="text-center mb-4">
+          <div className="text-center mb-4 register-header">
             <div className="icon-wrapper mb-3">
               <FaUserPlus />
             </div>
-            <h4 className="fw-bold">Create Your HireNest Account</h4>
+            <h4 className="fw-bold text-white">Create Your HireNest Account</h4>
             <p className="text-muted small">
               Join us and start your journey today.
             </p>
           </div>
 
-          <form onSubmit={handleRegisterSubmit}>
+         <div className="register-form-container">
+           <form onSubmit={handleRegisterSubmit}>
             {/* Username */}
             <div className="mb-3">
               <label className="form-label">Username</label>
@@ -112,6 +113,7 @@ const Register = () => {
               </small>
             </div>
           </form>
+         </div>
         </div>
       </section>
       <Footer />

@@ -1,8 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { FaSignInAlt } from "react-icons/fa";
 import "./navbar.css";
+import useAuth from "../../store/authcontext/AuthContext";
 
 const Navbar = () => {
+ const {state:{token}} =  useAuth()
+ console.log(token)
   return (
     <nav className="navbar navbar-expand-lg hirenest-navbar fixed-top">
       <div className="container">
@@ -46,9 +50,11 @@ const Navbar = () => {
             </li>
 
             <li className="nav-item">
-              <NavLink to="/login" className="nav-link login-btn-nav">
-                Login
-              </NavLink>
+             {
+              token&& token? "Dashbaord" :  <NavLink to="/login" className="nav-link login-btn-nav">
+                <FaSignInAlt style={{ marginRight: "5px" }} /> Login
+              </NavLink> 
+             }
             </li>
           </ul>
         </div>

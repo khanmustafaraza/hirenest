@@ -6,7 +6,7 @@ import {
   FaEye,
   FaEyeSlash,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "./login.css";
 import Navbar from "../../../components/navbar/Navbar";
 import Footer from "../../../components/footer/Footer";
@@ -16,6 +16,11 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { state, handleLoginChange, handleLoginSubmit } = useAuth();
   const formData = state.login;
+  console.log(state);
+
+  if (state?.token) {
+    return <Navigate to="/user-dashboard" replace />;
+  }
 
   return (
     <>
@@ -94,7 +99,7 @@ const Login = () => {
             <small className="text-muted">
               Don’t have an account?{" "}
               <Link to="/register" className="register-link">
-                Register here
+                <span className="text-primary"> Register here</span>
               </Link>
             </small>
           </div>

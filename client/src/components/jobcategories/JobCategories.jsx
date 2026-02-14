@@ -28,21 +28,21 @@ const JobCategories = () => {
   }, []);
 
   return (
-    <section className="job-categories">
+    <section className="job-categories-premium">
       <div className="container">
-        <div className="section-header text-center mb-5">
+        <div className="section-header-premium text-center mb-5">
           <h2>Explore By Category</h2>
           <p>Select a domain to discover relevant roles</p>
         </div>
 
-        <div className="row">
+        <div className="row g-4">
           {state?.jobCategoryList?.map((cat, i) => (
-            <div key={i} className="col-6 col-md-4 col-lg-3 mb-4">
-              <div className="category-card">
-                <div className="category-icon">
+            <div key={i} className="col-6 col-md-4 col-lg-3">
+              <div className="category-card-premium">
+                <div className="category-icon-premium">
                   {categoryIcons[cat.categoryName] || <FaDatabase />}
                 </div>
-                <span className="category-name">{cat.categoryName}</span>
+                <span className="category-name-premium">{cat.categoryName}</span>
               </div>
             </div>
           ))}

@@ -20,32 +20,32 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-premium">
       <div className="container">
-        <div className="section-header text-center mb-5">
+        <div className="section-header-premium text-center mb-5">
           <h2>What Our Users Say</h2>
           <p>Real feedback from job seekers who found their dream roles</p>
         </div>
 
-        <div className="row">
+        <div className="row g-4">
           {testimonials.map((t, i) => (
-            <div className="col-md-6 mb-4" key={i}>
-              <div className="testimonial-card">
-                <div className="testimonial-header d-flex align-items-center mb-3">
+            <div className="col-md-6" key={i}>
+              <div className="testimonial-card-premium">
+                <div className="testimonial-header-premium d-flex align-items-center mb-3">
                   <img
                     src={t.image}
                     alt={t.name}
-                    className="testimonial-image"
+                    className="testimonial-image-premium"
                   />
                   <div className="ms-3">
-                    <h6 className="name mb-1">{t.name}</h6>
-                    <small className="role">{t.role}</small>
+                    <h6 className="name-premium mb-1">{t.name}</h6>
+                    <small className="role-premium">{t.role}</small>
                   </div>
                 </div>
 
-                <div className="testimonial-body">
-                  <FaQuoteLeft className="quote-icon" />
-                  <p className="feedback">{t.feedback}</p>
+                <div className="testimonial-body-premium">
+                  <FaQuoteLeft className="quote-icon-premium" />
+                  <p className="feedback-premium">{t.feedback}</p>
                 </div>
               </div>
             </div>
