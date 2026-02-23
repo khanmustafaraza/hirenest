@@ -21,9 +21,13 @@ const Register = () => {
   return (
     <>
       <Navbar />
-      <section className="register-section d-flex align-items-center justify-content-center">
-        <div className="register-card">
-          <div className="text-center mb-4 register-header">
+      <section className="register-section">
+        <div className="register-left-container">
+          <img src="login1.webp" alt="login-logo" className="w-100" style={{height:"544px"}} />
+        </div>
+        <div className="register-right-container">
+          <div className="register-card">
+          <div className="text-center register-header">
             <div className="icon-wrapper mb-3">
               <FaUserPlus />
             </div>
@@ -36,7 +40,7 @@ const Register = () => {
          <div className="register-form-container">
            <form onSubmit={handleRegisterSubmit}>
             {/* Username */}
-            <div className="mb-3">
+            <div className="mb-5">
               <label className="form-label">Username</label>
               <div className="input-group custom-input">
                 <span className="input-group-text">
@@ -114,6 +118,7 @@ const Register = () => {
             </div>
           </form>
          </div>
+        </div>
         </div>
       </section>
       <Footer />

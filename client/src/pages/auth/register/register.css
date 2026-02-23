@@ -1,34 +1,46 @@
 .register-section {
-  min-height: 100vh;
-  /* background: linear-gradient(135deg, #f8f9fa, #e9ecef); */
-  padding: 40px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 60px;
+  padding: 10px;
+
+  flex-wrap: wrap;
+  width: 100%;
+}
+.register-left-container {
+  flex: 1 1 auto;
+}
+.register-right-container {
+  flex: 1 1 auto;
 }
 .register-header {
-  background-color: var(--primary-blue);
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  padding: 4px;
-  
+  background-color: #ffbe57;
+
+  width: 100%;
 }
 .register-card {
-  box-shadow: 0 0 4px lightgray;
-   max-width: 450px;
-  /* border: 1px solid black;
-  max-width:  450px; */
+  /* box-shadow: 0 0 4px lightgray; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .register-form-container {
   background: #ffffff;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
   /* padding: 4px; */
-  border-radius: 5px;
-  width: 100%;
-  max-width: 450px;
-  transition: 0.3s ease;
-  /* box-shadow: 0 0 4px lightgray; */
-  padding: 0px 23px;
-}
 
-.register-card:hover {
-  /* transform: translateY(-5px); */
+  width: 100%;
+  /* max-width: 450px; */
+  transition: 0.3s ease;
+  box-shadow: 0 0 4px lightgray;
+  padding: 0px 23px;
+  border: 1px solid lightgray;
 }
 
 .icon-wrapper {
@@ -67,7 +79,8 @@
   padding: 10px;
   border-radius: 4px;
   transition: 0.3s;
-   background-color: var(--primary-blue) !important;
+  background-color: var(--primary-blue) !important;
+  border: none;
 }
 
 .register-btn:hover {

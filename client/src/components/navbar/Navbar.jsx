@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
-import "./navbar.css";
 import useAuth from "../../store/authcontext/AuthContext";
+import { RiAccountPinBoxFill } from "react-icons/ri";
+import "./navbar.css";
 
 const Navbar = () => {
  const {state:{token}} =  useAuth()
@@ -30,7 +31,7 @@ const Navbar = () => {
 
         {/* Menu */}
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto align-items-center gap-lg-4">
+          <ul className="navbar-nav mx-auto align-items-lg-center gap-lg-4">
             <li className="nav-item">
               <NavLink to="/" end className="nav-link">
                 Home
@@ -51,7 +52,7 @@ const Navbar = () => {
 
             <li className="nav-item">
              {
-              token&& token? "Dashbaord" :  <NavLink to="/login" className="nav-link login-btn-nav">
+              token&& token? <RiAccountPinBoxFill title="Account/Profile" className="fs-3"/> :  <NavLink to="/login" className="nav-link login-btn-nav">
                 <FaSignInAlt style={{ marginRight: "5px" }} /> Login
               </NavLink> 
              }

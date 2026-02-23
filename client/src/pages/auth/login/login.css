@@ -13,10 +13,6 @@
   transition: 0.3s ease;
 }
 
-.login-card:hover {
-  /* transform: translateY(-5px); */
-}
-
 .icon-wrapper {
   width: 70px;
   height: 70px;
@@ -54,6 +50,7 @@
   border-radius: 4px;
   transition: 0.3s;
   background-color: var(--primary-blue) !important;
+  border: none;
 }
 
 .login-btn:hover {

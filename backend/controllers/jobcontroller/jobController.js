@@ -143,16 +143,43 @@ const deleteJob = async (req, res) => {
 
 //  applications of user find by job id
 
-const jobApplicationController = async(req,res) =>{
-  const jobId =  req.params.id
-  const userApplication =  await JobApplication.find({jobId:jobId})
-  console.log(userApplication)
+const jobApplicationController = async (req, res) => {
   try {
-    
+    const jobId = req.params.id;
+
+    // Check if job exists
+    const job = await Job.findById(jobId);
+    if (!job) {
+      return res.status(404).json({
+        success: false,
+        message: "Job not found",
+      });
+    }
+
+    // Find applications for this job
+    const applications = await JobApplication.find({ jobId })
+      .populate({
+        path: "userId",
+        select: "-password -__v", // hide sensitive fields
+      })
+      .populate("profileId")
+      .sort({ createdAt: -1 });
+
+    return res.status(200).json({
+      success: true,
+      message: "Job applications fetched successfully",
+      totalApplications: applications.length,
+      job,
+      applications,
+    });
   } catch (error) {
-    
+    console.error("Job application error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
   }
-}
+};
 
 /**
  * Export Controllers

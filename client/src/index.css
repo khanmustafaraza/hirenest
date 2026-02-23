@@ -16,11 +16,9 @@
   --border-light: #e5e7eb;
 
   /* Primary Color (Dark Navy Blue) */
-  --primary-blue:#7d9cc5; /* dark navy blue */
+  --primary-blue: #7d9cc5; /* dark navy blue */
   --primary-blue-hover: #408ae4; /* slightly lighter shade for hover / gradient */
 }
-
-
 
 .form-control:focus {
   box-shadow: none !important;
@@ -33,8 +31,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "AR One Sans", sans-serif; */
-  font-family: "Open Sans", sans-serif;
+  font-family: "AR One Sans", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
 }
 body {
   overflow-x: hidden;

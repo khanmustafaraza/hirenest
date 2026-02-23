@@ -27,6 +27,7 @@ import TermsAndConditions from "./pages/termsandconditions/TermsAndCondition";
 import UserList from "./pages/admin/userlist/UserList";
 import UserRegisterList from "./pages/admin/userregisterlist/UserRegisterList";
 import JobApplication from "./pages/admin/jobapplication/JobApplication";
+import JobApplicationList from "./pages/admin/jobapplicationlist/JobApplicationList";
 // import Protected from "./routes/Protected";
 // import PostJob from "./pages/admin/postjob/PostJob";
 
@@ -62,6 +63,7 @@ const App = () => {
           <Route path="/admin/users-list" element={<UserList />} />
           <Route path="/admin/users-register-list" element={<UserRegisterList />} />
           <Route path="/admin/job-applications" element={<JobApplication />} />
+          <Route path="/admin/job-application-list/:id" element={<JobApplicationList />} />
         
         </Route>
       </Routes>

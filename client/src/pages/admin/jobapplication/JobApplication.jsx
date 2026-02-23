@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import useJob from '../../../store/jobcontext/JobContext';
 import LeftBar from '../../../components/leftbar/LeftBar';
 import RighBar from '../../../components/rightbar/RighBar';
+import { NavLink } from 'react-router-dom';
 
 const JobApplication = () => {
   const { state, getAllJobs } = useJob();
@@ -9,9 +10,7 @@ const JobApplication = () => {
   useEffect(() => {
     getAllJobs();
   }, []);
-  const handleJobApplication =(id) =>{
-    console.log(id)
-  }
+  
 
   return (
     <div className="d-flex bg-light min-vh-100">
@@ -68,13 +67,13 @@ const JobApplication = () => {
                       </div>
 
                       <div className="mt-auto">
-                        <button
-                        onClick={()=>{handleJobApplication(job._id)}}
+                        <NavLink
+                        to ={`/admin/job-application-list/${job._id}`}
                          
                           className="btn btn-outline-primary w-100"
                         >
                           View Applicants
-                        </button>
+                        </NavLink>
                       </div>
                     </div>
                   </div>

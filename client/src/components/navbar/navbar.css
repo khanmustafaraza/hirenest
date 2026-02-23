@@ -5,7 +5,7 @@
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: 0.3s ease;
-  padding: 8px 0;
+  padding: 4px 0;
 }
 
 /* Brand */
@@ -23,7 +23,7 @@
 /* Nav Links */
 .hirenest-navbar .nav-link {
   font-weight: 500;
-  color: #495057 !important;
+  color: black !important;
   position: relative;
   transition: all 0.3s ease;
   padding: 6px 8px;
@@ -45,11 +45,11 @@
 }
 
 .hirenest-navbar .nav-link:hover {
-  color: var(--primary-blue) !important;
+  color: navy !important;
 }
 
 .hirenest-navbar .nav-link.active {
-  color: var(--primary-blue) !important;
+  color: gray !important;
   font-weight: 600;
 }
 
@@ -57,11 +57,12 @@
 .hirenest-navbar .login-btn-nav {
   background: var(--primary-blue);
   color: #fff !important;
-  padding: 8px 28px;
-  border-radius: 30px;
+  padding: 8px 30px !important;
+  border-radius: 3px;
   transition: 0.3s ease;
   display: flex;
   align-items: center;
+  border: none;
 }
 
 .hirenest-navbar .login-btn-nav:hover {
