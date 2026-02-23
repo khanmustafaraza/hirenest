@@ -24,6 +24,9 @@ import UserProfileById from "./pages/user/uerprofilebyid/UserProfileById";
 import ApplyJobList from "./pages/user/applyjoblist/ApplyJobList";
 // import PrivacyPolicy from "./pages/privacypolicy/PrivacyPolicy";
 import TermsAndConditions from "./pages/termsandconditions/TermsAndCondition";
+import UserList from "./pages/admin/userlist/UserList";
+import UserRegisterList from "./pages/admin/userregisterlist/UserRegisterList";
+import JobApplication from "./pages/admin/jobapplication/JobApplication";
 // import Protected from "./routes/Protected";
 // import PostJob from "./pages/admin/postjob/PostJob";
 
@@ -55,10 +58,11 @@ const App = () => {
           <Route path="add-job-category" element={<AddJobCategory />} />
           <Route path="job-category-list" element={<JobCategoryList />} />
           <Route path="admin-job-list" element={<AdminJobList />} />
-          <Route path="/admin/saved-posts" element={<ManageJobs />} />
-          <Route path="/admin/applications" element={<Applications />} />
           <Route path="/admin/add-post" element={<PostJob />} />
-          <Route path="/admin/register-user" element={<RegisterList />} />
+          <Route path="/admin/users-list" element={<UserList />} />
+          <Route path="/admin/users-register-list" element={<UserRegisterList />} />
+          <Route path="/admin/job-applications" element={<JobApplication />} />
+        
         </Route>
       </Routes>
     </>

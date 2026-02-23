@@ -1,4 +1,6 @@
+const JobApplication = require("../../models/jobApplicationModel");
 const Job = require("../../models/jobModel");
+const UserProfile = require("../../models/UserProfileModel");
 
 /**
  * Create Job
@@ -136,6 +138,21 @@ const deleteJob = async (req, res) => {
     });
   }
 };
+// jobs find  by category
+
+
+//  applications of user find by job id
+
+const jobApplicationController = async(req,res) =>{
+  const jobId =  req.params.id
+  const userApplication =  await JobApplication.find({jobId:jobId})
+  console.log(userApplication)
+  try {
+    
+  } catch (error) {
+    
+  }
+}
 
 /**
  * Export Controllers
@@ -146,4 +163,5 @@ module.exports = {
   getJobDetails,
   updateJob,
   deleteJob,
+  jobApplicationController
 };

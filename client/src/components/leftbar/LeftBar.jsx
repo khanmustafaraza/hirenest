@@ -20,10 +20,8 @@ const navLinks = [
   { to: "/admin/job-category-list", label: "Job Category List", icon: IoMdList },
   { to: "/admin/add-post", label: "Add Job", icon: FaPlus },
   { to: "/admin/admin-job-list", label: "Jobs List", icon: FaBriefcase },
-  { to: "/admin/users", label: "Users", icon: FaUsers },
-  { to: "/admin/saved-posts", label: "Saved", icon: FaBookmark },
-  { to: "/admin/register-user", label: "Registrations", icon: FaRegRegistered },
-  { to: "/admin/applications", label: "Applications", icon: FaTags },
+  { to: "/admin/users-list", label: "Users List", icon: FaUsers },
+  { to: "/admin/job-applications", label: " Job Applications", icon: FaTags },
 ];
 
 const LeftBar = () => {
