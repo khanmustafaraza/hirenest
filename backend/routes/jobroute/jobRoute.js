@@ -7,11 +7,13 @@ const {
   getJobDetails,
   updateJob,
   deleteJob,
+  jobApplicationController
 } = require("../../controllers/jobcontroller/jobController");
 
 router.post("/admin/job/create-job", createJob);
 router.get("/job/get-all-jobs", getAllJobs);
 router.get("/user/job/job-details/:id", getJobDetails);
+router.get("/admin/job-application", jobApplicationController);
 // router.get("/:id", getJobById);
 router.put("/:id", updateJob);
 router.delete("/:id", deleteJob);

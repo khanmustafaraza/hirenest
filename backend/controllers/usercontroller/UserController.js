@@ -154,7 +154,7 @@ const userAppliedJobApplication = async (req, res) => {
     });
     const exsitJob = await JobApplication.findOne({ jobId: findJob._id });
     if (exsitJob) {
-      return res.status(404).json({
+      return res.status(409).json({
         success: false,
         msg: "This Job is Already Applied",
       });

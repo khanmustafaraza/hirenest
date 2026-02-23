@@ -83,7 +83,7 @@ const UserAppProvider = ({ children }) => {
         toast.error(data.error);
       }
     } catch (error) {
-      console.log("Profile submit error:", error);
+      // console.log("Profile submit error:", error);
       toast.error("Failed to submit profile");
     }
   };
@@ -110,26 +110,48 @@ const UserAppProvider = ({ children }) => {
         toast.error(data.error);
       }
     } catch (error) {
-      console.log("Profile fetch error:", error);
+      // console.log("Profile fetch error:", error);
       toast.error("Failed to fetch profile");
     }
   };
-  const userAppliedJobApplication = async(id) =>{
-   
-    try {
-      const res  = await fetch(`${VITE_API_URL}/api/user/apply-job-application/${id}`,{
-        method:"POST",
-        headers:{
-          Authorization : `Bearer ${token}`
-        }
-      })
-      const data = await res.json();
-      alert(data.msg)
-      
-    } catch (error) {
-      
+  const userAppliedJobApplication = async (id) => {
+    if(!token){
+      return
     }
-  };
+  try {
+    const res = await fetch(
+      `${VITE_API_URL}/api/user/apply-job-application/${id}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    const data = await res.json();
+
+    // 👇 IMPORTANT PART
+    if (!res.ok) {
+      if (res.status === 401) {
+        alert("Please login again.");
+      } else if (res.status === 409) {
+        alert(data.msg);
+      } else {
+        alert("Something went wrong.");
+      }
+      return;
+    }
+
+    // ✅ success case
+    alert(data.msg);
+
+  } catch (error) {
+    console.error("Network error:", error);
+    alert("Server is not reachable.");
+  }
+};
 
   const userAppliedJobList = async() =>{
      try {
@@ -141,7 +163,7 @@ const UserAppProvider = ({ children }) => {
       })
       const data = await res.json();
       // alert(data)
-      console.log(data)
+      // console.log(data)
       dispatch({
         type:"SET_APPLIED_JOB",
         payload:data.data

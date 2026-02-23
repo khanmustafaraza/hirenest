@@ -6,7 +6,7 @@ import useAuth from "../../store/authcontext/AuthContext";
 
 const Navbar = () => {
  const {state:{token}} =  useAuth()
- console.log(token)
+
   return (
     <nav className="navbar navbar-expand-lg hirenest-navbar fixed-top">
       <div className="container">

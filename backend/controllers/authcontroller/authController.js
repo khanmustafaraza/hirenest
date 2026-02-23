@@ -1,4 +1,5 @@
 const Register = require("../../models/registerModel");
+const UserProfile = require("../../models/UserProfileModel");
 const { hashPassword, comparePassword } = require("../../utlis/password");
 const generateToken = require("../../utlis/token");
 
@@ -122,4 +123,37 @@ const deleteAccount = async (req, res) => {
   }
 };
 
-module.exports = { registerController, loginController };
+
+const userListController = async (req, res) => {
+  try {
+    const userList = await UserProfile.find().populate("userId",{
+      password:0,
+      isAdmin:0,
+      isProfile:0
+    });
+    if(!userList){
+      return res.status(400).json({
+        success:false,
+        message:"User List Not Found"
+      })
+    }
+
+    return res.status(200).json({
+      success:true,
+      data :userList
+    })
+   
+
+
+  } catch (error) {
+    console.error("Login Error:", error.message);
+    res.status(500).json({
+      success: false,
+      message: "Server error during user List found",
+      error: error.message,
+    });
+  }
+};
+
+
+module.exports = { registerController, loginController,userListController };

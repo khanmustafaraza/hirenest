@@ -82,7 +82,7 @@ const JobAppProvider = ({ children }) => {
       );
 
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       if (data.success) {
         toast.success(data.message);
       }
@@ -92,7 +92,7 @@ const JobAppProvider = ({ children }) => {
         return;
       }
 
-      console.log("Success:", data);
+      // console.log("Success:", data);
     } catch (error) {
       console.error("Category submit error:", error);
     }
@@ -174,7 +174,7 @@ const JobAppProvider = ({ children }) => {
         .split(",")
         .map((i) => i.trim()),
     };
-    console.log(jobObj);
+    // console.log(jobObj);s
     try {
       const res = await fetch(`${VITE_API_URL}/api/admin/job/create-job`, {
         method: "POST",
@@ -220,6 +220,7 @@ const JobAppProvider = ({ children }) => {
   };
 
 const getJobDetails = async (id) => {
+  // console.log("token>>>>>>>>>>>>",token)
   try {
     const res = await fetch(`${VITE_API_URL}/api/user/job/job-details/${id}`, {
       method: "GET",
@@ -228,7 +229,7 @@ const getJobDetails = async (id) => {
     });
 
     const data = await res.json();
-    console.log(data)
+    // console.log(data)
 
     if (data.success) {
       // Update the jobDetailObj in state
