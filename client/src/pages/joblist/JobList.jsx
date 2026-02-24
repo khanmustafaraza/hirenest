@@ -25,9 +25,11 @@ const JobList = () => {
               Find Your <span>Next Job</span>
             </h1>
             <p>
-              Explore verified opportunities from top companies. Quick search, clean layout, easy apply.
+              Explore verified opportunities from top companies.
+              Quick search, clean layout, easy apply.
             </p>
           </div>
+
           <div className="hero-right">
             <img
               src="https://www.transparentpng.com/thumb/jobs/jobs-images-png-26.png"
@@ -41,12 +43,24 @@ const JobList = () => {
       {/* FILTERS */}
       <section className="jobs-filters-minimal">
         <div className="container filters-minimal-container">
-          <input type="text" placeholder="Search jobs..." className="filter-input" />
-          <select><option>Category</option></select>
-          <select><option>Location</option></select>
-          <select><option>Experience</option></select>
-          <select><option>Job Type</option></select>
-          <button className="filter-btn-minimal">Apply</button>
+          <input
+            type="text"
+            placeholder="Search jobs..."
+            className="filter-input"
+          />
+          <select>
+            <option>Category</option>
+          </select>
+          <select>
+            <option>Location</option>
+          </select>
+          <select>
+            <option>Experience</option>
+          </select>
+          <select>
+            <option>Job Type</option>
+          </select>
+          <button className="filter-btn-minimal">Search</button>
         </div>
       </section>
 
@@ -57,23 +71,38 @@ const JobList = () => {
             {state.jobs.map((job) => (
               <div className="job-card-minimal" key={job._id}>
                 <div className="card-top-minimal">
-                  <div className="company-logo-minimal">{job.companyName[0]}</div>
-                  <div>
-                    <h5>{job.jobTitle}</h5>
-                    <p>{job.companyName} · {job.jobType}</p>
+                  <div className="company-logo-minimal">
+                    {job.companyName?.charAt(0)}
                   </div>
-                  <span className="status-minimal"><FaClock /> Hiring</span>
+
+                  <div className="card-title-area">
+                    <h5>{job.jobTitle}</h5>
+                    <p>
+                      {job.companyName} · {job.jobType}
+                    </p>
+                  </div>
+
+                  <span className="status-minimal">
+                    <FaClock /> Hiring
+                  </span>
                 </div>
+
                 <div className="card-middle-minimal">
                   <FaMapMarkerAlt /> {job.jobLocation}
                 </div>
+
                 <div className="card-tags-minimal">
-                  <span>{job.categoryName?.categoryName || "General"}</span>
+                  <span>
+                    {job.categoryName?.categoryName || "General"}
+                  </span>
                   {job.experience && <span>{job.experience}</span>}
                 </div>
+
                 <div className="card-bottom-minimal">
                   <NavLink to={`/job-details/${job._id}`}>
-                    <button className="card-btn-minimal">View Role →</button>
+                    <button className="card-btn-minimal">
+                      View Role →
+                    </button>
                   </NavLink>
                 </div>
               </div>
@@ -81,7 +110,6 @@ const JobList = () => {
           </div>
         ) : (
           <div className="empty-minimal">
-            <img src="/assets/empty-jobs.svg" alt="No Jobs" />
             <h3>No Jobs Available</h3>
             <p>Check back soon for new opportunities!</p>
           </div>
