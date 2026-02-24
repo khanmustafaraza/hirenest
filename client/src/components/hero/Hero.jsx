@@ -1,6 +1,6 @@
 import React from "react";
-import "./hero.css";
 import { NavLink } from "react-router-dom";
+import "./hero.css";
 
 const Hero = () => {
   return (
