@@ -7,7 +7,7 @@ import {
   FaUsers,
   FaDatabase,
 } from "react-icons/fa";
-import "./Jobcategories.css";
+import "./jobcategories.css";
 import useJob from "../../store/jobcontext/JobContext";
 
 // Map category names to icons
