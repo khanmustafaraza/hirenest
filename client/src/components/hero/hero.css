@@ -5,14 +5,14 @@
   position: relative;
   /* background-size: cover; */
   background-position: center;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   width: 100%;
   background-image: url("../../../public/team.jpg");
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
