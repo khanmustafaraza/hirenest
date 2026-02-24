@@ -26,7 +26,7 @@ const Login = () => {
     <>
       <Navbar />
       <section className="login-section d-flex align-items-center justify-content-center">
-        <div className="login-card shadow-lg">
+        <div className="login-card shadow-sm">
           <div className="text-center mb-4">
             <div className="icon-wrapper mb-3">
               <FaUserShield />

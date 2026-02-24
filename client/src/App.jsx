@@ -22,12 +22,12 @@ import UserDashboard from "./pages/user/userdashbaord/UserDashboard";
 import UserProfile from "./pages/user/userprofile/UserProfile";
 import UserProfileById from "./pages/user/uerprofilebyid/UserProfileById";
 import ApplyJobList from "./pages/user/applyjoblist/ApplyJobList";
-// import PrivacyPolicy from "./pages/privacypolicy/PrivacyPolicy";
 import TermsAndConditions from "./pages/termsandconditions/TermsAndCondition";
 import UserList from "./pages/admin/userlist/UserList";
 import UserRegisterList from "./pages/admin/userregisterlist/UserRegisterList";
 import JobApplication from "./pages/admin/jobapplication/JobApplication";
 import JobApplicationList from "./pages/admin/jobapplicationlist/JobApplicationList";
+import Policy from "./pages/privacypolicy/Policy";
 // import Protected from "./routes/Protected";
 // import PostJob from "./pages/admin/postjob/PostJob";
 
@@ -43,7 +43,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/job-list" element={<JobList/>} />
         <Route path="/job-details/:id" element={<JobDetails/>} />
-        {/* <Route path="/privacy-policy" element={<PrivacyPolicy/>} /> */}
+        <Route path="/policy" element={<Policy/>} />
         <Route path="/terms-conditions" element={<TermsAndConditions/>} />
 
         {/* user Route */}

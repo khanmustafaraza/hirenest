@@ -33,16 +33,12 @@ const Footer = () => {
             <h6 className="footer-heading">Explore</h6>
             <ul className="footer-links">
               <li>
-                <a href="/jobs">Browse Jobs</a>
+                <NavLink to ="/job-list">Browse Jobs</NavLink>
               </li>
+             
+            
               <li>
-                <a href="/post-job">Post a Job</a>
-              </li>
-              <li>
-                <a href="/companies">Companies</a>
-              </li>
-              <li>
-                <a href="/about">About</a>
+                <NavLink to ="/about">About</NavLink>
               </li>
             </ul>
           </div>
@@ -55,13 +51,11 @@ const Footer = () => {
                 <NavLink to="/terms-conditions">Terms</NavLink>
               </li>
               <li>
-            <NavLink to="/privacy-policy">Privacy</NavLink>
+            <NavLink to="/policy">Privacy</NavLink>
               </li>
+             
               <li>
-                <a href="/faq">FAQs</a>
-              </li>
-              <li>
-                <a href="/contact">Contact</a>
+                <NavLink to="/contact">Contact</NavLink>
               </li>
             </ul>
           </div>

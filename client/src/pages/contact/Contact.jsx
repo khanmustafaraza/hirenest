@@ -19,7 +19,7 @@ const Contact = () => {
         <div className="container">
           {/* Header */}
           <div className="text-center mb-5">
-            <h2 className="section-title">📬 Get in Touch</h2>
+            <h2 className="section-title">Get in Touch</h2>
             <p className="section-subtitle">
               Have a question, feedback, or collaboration idea? We'd love to
               hear from you.

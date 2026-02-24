@@ -48,13 +48,13 @@
 
 /* ===== Button ===== */
 .btn-elegant {
-  background: #020617;
+  background: var(--primary-blue);
   color: #ffffff;
   font-size: 0.9rem;
   font-weight: 500;
-  border-radius: 8px;
+  border-radius: 2px;
   border: none;
-  padding: 11px;
+  padding: 12px 23px !important;
 }
 
 .btn-elegant:hover {

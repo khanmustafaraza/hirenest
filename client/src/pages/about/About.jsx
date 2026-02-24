@@ -3,6 +3,7 @@ import "./about.css";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import { FiUsers, FiTrendingUp, FiShield, FiZap } from "react-icons/fi";
+import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
@@ -16,16 +17,13 @@ const About = () => {
             HireNest: The Future of <span>Hiring</span>
           </h1>
           <p>
-            Connecting ambitious professionals with innovative companies —
-            fast, secure, and effortless.
+            Connecting ambitious professionals with innovative companies — fast,
+            secure, and effortless.
           </p>
           <div className="hero-buttons">
-            <a href="/register" className="primary-btn">
-              Get Started
-            </a>
-            <a href="/job-list" className="secondary-btn">
+            <NavLink to="/job-list" className="secondary-btn">
               Browse Jobs
-            </a>
+            </NavLink>
           </div>
         </div>
       </section>
@@ -35,7 +33,9 @@ const About = () => {
         <div className="container">
           <div className="section-heading text-center">
             <h2>Why HireNest?</h2>
-            <p>Designed to make your hiring journey smooth, fast, and reliable.</p>
+            <p>
+              Designed to make your hiring journey smooth, fast, and reliable.
+            </p>
           </div>
 
           <div className="row g-4 mt-4">
@@ -114,9 +114,9 @@ const About = () => {
         <div className="container text-center">
           <h2>Start your next chapter today</h2>
           <p>Join thousands discovering better career opportunities.</p>
-          <a href="/register" className="primary-btn white">
+          <NavLink to="/register" className="primary-btn white">
             Start Your Journey
-          </a>
+          </NavLink>
         </div>
       </section>
 

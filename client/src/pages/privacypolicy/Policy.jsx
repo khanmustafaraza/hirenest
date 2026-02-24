@@ -3,7 +3,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import "./policy.css";
 
-const PrivacyPolicy = () => {
+const Policy = () => {
   return (
     <>
       <Navbar />
@@ -73,4 +73,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default Policy;
