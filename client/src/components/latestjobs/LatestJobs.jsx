@@ -1,5 +1,5 @@
 import React from "react";
-import "./LatestJobs.css";
+import "./latestJobs.css";
 
 const latestJobs = [
   {
