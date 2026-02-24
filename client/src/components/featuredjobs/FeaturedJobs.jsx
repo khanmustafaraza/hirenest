@@ -1,5 +1,5 @@
 import React from "react";
-import "./Featuredjobs.css";
+import "./featuredjobs.css";
 
 const featuredJobs = [
   {
