@@ -1,13 +1,12 @@
 import React from "react";
 import "./hero.css";
 import { NavLink } from "react-router-dom";
-import heroBg from "../../assets/team.jpg"; // background image
 
 const Hero = () => {
   return (
     <section
       className="hero-section-premium"
-      style={{ backgroundImage: `url(${heroBg})` }}
+    
     >
       <div className="hero-overlay-premium">
         <div className="hero-content-premium text-center">

@@ -2,14 +2,16 @@
 /* HERO SECTION */
 .hero-section-premium {
   position: relative;
-  background-size:cover;
-  background-position: center center;
+  background-image: url('team.jpg'); /* make sure URL is correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* prevent tiling */
   height: 90vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  width: 100vw;
 }
 
 .hero-overlay-premium {
