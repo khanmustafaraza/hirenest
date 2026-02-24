@@ -1,6 +1,6 @@
 import React from "react";
 import { FaQuoteLeft } from "react-icons/fa";
-import "./Testimonials.css";
+import "./testimonials.css";
 
 const testimonials = [
   {
