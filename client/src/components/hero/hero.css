@@ -13,6 +13,7 @@
   width: 100%;
   background-image: url("../../../public/team.jpg");
   background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .hero-overlay-premium {
