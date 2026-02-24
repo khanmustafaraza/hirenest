@@ -25,7 +25,8 @@
 }
 
 .hero-content-premium {
-  max-width: 800px;
+  /* max-width: 800px; */
+  background-color: red;
 }
 
 .hero-badge-premium {
