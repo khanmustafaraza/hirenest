@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import "./jobcategories.css";
 import useJob from "../../store/jobcontext/JobContext";
+import { NavLink } from "react-router-dom";
 
 // Map category names to icons
 const categoryIcons = {
@@ -35,16 +36,20 @@ const JobCategories = () => {
           <p>Select a domain to discover relevant roles</p>
         </div>
 
-        <div className="row g-4">
+        <div className="row g-4" title="View Job">
           {state?.jobCategoryList?.map((cat, i) => (
-            <div key={i} className="col-6 col-md-4 col-lg-3">
-              <div className="category-card-premium">
-                <div className="category-icon-premium">
-                  {categoryIcons[cat.categoryName] || <FaDatabase />}
+            <NavLink to ={`/job-category/${cat._id}`} className="col-6 col-md-4 col-lg-3" key={cat._id}>
+              <div key={i} >
+                <div className="category-card-premium">
+                  <div className="category-icon-premium">
+                    {categoryIcons[cat.categoryName] || <FaDatabase />}
+                  </div>
+                  <span className="category-name-premium">
+                    {cat.categoryName}
+                  </span>
                 </div>
-                <span className="category-name-premium">{cat.categoryName}</span>
               </div>
-            </div>
+            </NavLink>
           ))}
         </div>
       </div>

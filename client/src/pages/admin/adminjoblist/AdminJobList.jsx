@@ -11,9 +11,13 @@ import {
 import LeftBar from "../../../components/leftbar/LeftBar";
 import RighBar from "../../../components/rightbar/RighBar";
 import useJob from "../../../store/jobcontext/JobContext";
+import "./adminjoblist.css"
+const VITE_API_URL = import.meta.env.VITE_API_URL
 
 const AdminJobList = () => {
- const { state, getAllJobs, handleJobDelete } = useJob();
+ const { state, getAllJobs,} = useJob();
+ const[isUpdate,setIsUpdate] = useState(false)
+ const[isDelete,setIsDelete] = useState(false)
 
   const [search, setSearch] = useState("");
   const [type, setType] = useState("");
@@ -22,7 +26,7 @@ const AdminJobList = () => {
 
   useEffect(() => {
     getAllJobs();
-  }, []);
+  }, [isUpdate,isDelete]);
 
   console.log(state.jobs)
   const filteredJobs = state.jobs.filter((job) => {
@@ -35,6 +39,45 @@ const AdminJobList = () => {
         job.companyName?.toLowerCase().includes(company.toLowerCase()))
     );
   });
+
+  const handleToggleIsFeatured = async (id) => {
+  console.log(id);
+
+  const res = await fetch(
+    `${VITE_API_URL}/api/admin/job-update-isfeatured/${id}`,
+    {
+      method: "PUT",   // ✅ correct place
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+
+  const data = await res.json();
+
+  if (data.success) {
+    setIsUpdate(!isUpdate);
+  }
+};
+  const handleJobDelete = async (id) => {
+  console.log(id);
+
+  const res = await fetch(
+    `${VITE_API_URL}/api/admin/job-delete/${id}`,
+    {
+      method: "DELETE",   // ✅ correct place
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+
+  const data = await res.json();
+
+  if (data.success) {
+    setIsDelete(!isDelete);
+  }
+};
 
   return (
     <div className="d-flex bg-light min-vh-100">
@@ -132,6 +175,7 @@ const AdminJobList = () => {
                     <th>Salary</th>
                     <th>Experience</th>
                     <th>Deadline</th>
+                    <th>Featured</th>
                     <th className="text-center">Action</th>
                   </tr>
                 </thead>
@@ -172,6 +216,12 @@ const AdminJobList = () => {
                                 job.applicationDeadline,
                               ).toLocaleDateString()
                             : "-"}
+                        </td>
+                        <td title="Toggle isFeatured" >
+                        
+                           {job.isFeatured? <p className="bg-success text-white text-center border-3">True</p>: <button className="toggle-btn" onClick={()=>handleToggleIsFeatured(job._id)}>Toggle job</button>
+                            }
+                       
                         </td>
 
                         <td className="text-center">

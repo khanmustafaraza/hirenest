@@ -28,6 +28,7 @@ import UserRegisterList from "./pages/admin/userregisterlist/UserRegisterList";
 import JobApplication from "./pages/admin/jobapplication/JobApplication";
 import JobApplicationList from "./pages/admin/jobapplicationlist/JobApplicationList";
 import Policy from "./pages/privacypolicy/Policy";
+import JobFilterCategory from "./pages/jobfiltercategory/JobFilterCategory";
 // import Protected from "./routes/Protected";
 // import PostJob from "./pages/admin/postjob/PostJob";
 
@@ -42,6 +43,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/job-list" element={<JobList/>} />
+        <Route path="/job-category/:id" element={<JobFilterCategory/>} />
         <Route path="/job-details/:id" element={<JobDetails/>} />
         <Route path="/policy" element={<Policy/>} />
         <Route path="/terms-conditions" element={<TermsAndConditions/>} />

@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import reducer from "../../reducers/jobreducer/JobReducer";
 import { toast } from "react-toastify";
 
@@ -270,6 +270,9 @@ const getJobDetails = async (id) => {
       console.log(error);
     }
   };
+  useEffect(()=>{
+    getAllJobs()
+  },[])
 
   return (
     <CreateJobContext.Provider

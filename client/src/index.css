@@ -45,3 +45,9 @@ a {
 .mt-60 {
   margin: 54px 0 5px 0px;
 }
+
+
+table{
+  width: 100%;
+  overflow-x: auto;
+}

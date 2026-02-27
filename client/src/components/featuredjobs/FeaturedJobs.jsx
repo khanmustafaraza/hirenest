@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./featuredjobs.css";
+import useJob from "../../store/jobcontext/JobContext";
+import { NavLink } from "react-router-dom";
 
 const featuredJobs = [
   {
@@ -19,6 +21,11 @@ const featuredJobs = [
 ];
 
 const FeaturedJobs = () => {
+  const { state, getAllJobs } = useJob();
+  console.log(state.jobs);
+  useEffect(() => {
+    getAllJobs();
+  }, []);
   return (
     <section className="featured-jobs-premium">
       <div className="container">
@@ -28,25 +35,29 @@ const FeaturedJobs = () => {
         </div>
 
         <div className="row g-4">
-          {featuredJobs.map((job, i) => (
-            <div key={i} className="col-md-6">
-              <div className="featured-job-card-premium">
-                <div className="top-row-premium">
-                  <h5>{job.title}</h5>
-                  <span className="pill-premium">{job.type}</span>
+          {state?.jobs
+            ?.filter((job) => job.isFeatured) // this is correct
+            .map((job) => (
+             <NavLink to ={`/job-details/${job._id}`} className="col-md-6">
+               <div key={job._id} >
+                <div className="featured-job-card-premium">
+                  <div className="top-row-premium">
+                    <h5>{job.jobTitle}</h5>
+                    <span className="pill-premium">{job.jobType}</span>
+                  </div>
+
+                  <p className="company-premium">{job.companyName}</p>
+
+                  <div className="meta-premium">
+                    <span>{job.jobLocation}</span>
+                    <span>{job.salary}</span>
+                  </div>
+
+                  <button className="primary-btn-premium">View Role</button>
                 </div>
-
-                <p className="company-premium">{job.company}</p>
-
-                <div className="meta-premium">
-                  <span>{job.location}</span>
-                  <span>{job.salary}</span>
-                </div>
-
-                <button className="primary-btn-premium">View Role</button>
               </div>
-            </div>
-          ))}
+             </NavLink>
+            ))}
         </div>
       </div>
     </section>

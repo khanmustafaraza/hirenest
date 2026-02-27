@@ -88,7 +88,7 @@ const JobApplicationList = () => {
                           <td>
                             <div className="d-flex align-items-center">
                               <img
-                                src={`${VITE_API_URL}/uploads/${app.profileId?.profile_Pic}`}
+                                src={`${VITE_API_URL}/api/user/uploads/${app.profileId?.profile_Pic}`}
                                 alt="profile"
                                 width="45"
                                 height="45"
@@ -121,7 +121,7 @@ const JobApplicationList = () => {
 
                           <td>
                             <a
-                              href={`${VITE_API_URL}/uploads/${app.profileId?.resume}`}
+                              href={`${VITE_API_URL}/api/user/uploads/${app.profileId?.resume}`}
                               target="_blank"
                               rel="noreferrer"
                               className="btn btn-sm btn-outline-primary"
