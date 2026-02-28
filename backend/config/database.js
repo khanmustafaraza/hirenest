@@ -1,3 +1,4 @@
+require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]);   
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
@@ -15,9 +16,10 @@ const connectDB = async () => {
 
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`❌ Error while connecting to MongoDB: ${error.message}`);
+    console.error(`❌ Error while connecting to MongoDB: ${error}`);
     process.exit(1); // Exit the process with failure
   }
 };
+
 
 module.exports = connectDB;
