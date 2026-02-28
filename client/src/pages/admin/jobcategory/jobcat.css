@@ -1,9 +1,7 @@
 /* Fix flex layout issue */
 
-
 .content-wrapper {
   flex: 1;
- 
 }
 
 /* Scroll container */
@@ -14,18 +12,13 @@
 
 /* Force table to be wider than container */
 .category-table {
-  min-width: 900px;   /* Adjust if needed */
+  min-width: 900px; /* Adjust if needed */
 }
 
 /* Prevent text wrapping */
 .category-table th,
 .category-table td {
   white-space: nowrap;
-}
-
-/* Optional styling */
-.category-card {
-  border-radius: 12px;
 }
 
 .icon-btn {
@@ -36,4 +29,10 @@
 
 .delete-btn {
   color: #dc3545;
+}
+.professional-btn {
+  background-color: var(--primary-blue);
+  border: 0px;
+  padding: 8px 23px;
+  border-radius: 3px;
 }

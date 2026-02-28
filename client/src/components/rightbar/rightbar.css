@@ -1,14 +1,21 @@
-.rightbar {
-  flex: 1;
-  /* min-height: 100vh; */
-  background: #f8fafc; /* soft neutral */
+.rightbar-main-container {
+  width: 100%;
+}
+.rightbar-container {
   display: flex;
-  flex-direction: column;
+  /* background: #7eff05; */
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* Main content area */
 .rightbar-content {
-  flex: 1;
+  width: 85%;
+  /* flex: 8; */
   /* padding: 20px 24px; */
-  background: #f8fafc;
+}
+@media (max-width: 576px) {
+  .rightbar-content {
+    width: 65%;
+  }
 }

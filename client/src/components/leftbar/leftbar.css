@@ -1,22 +1,10 @@
-:root {
-  --primary-blue: #7d9cc5;
-  --primary-blue-hover: #408ae4;
-  --text-dark: #111827;
-  --bg-sidebar: #ffffff;
-  --border-light: #e5e7eb;
-}
-
 /* Sidebar base */
 .leftbar {
-  width: 220px;
-  height: 100vh;
+  width: 15%;
   background: var(--bg-sidebar);
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; */
+
   border-right: 1px solid var(--border-light);
-  /* padding: 12px; */
-  font-family: "Inter", sans-serif;
+  flex: 1;
 }
 
 /* Brand */
@@ -41,20 +29,25 @@
 .leftbar-nav {
   display: flex;
   flex-direction: column;
-  padding: 13px;
+  padding: 1px;
+  /* background-color: green; */
+  width: 100%;
   /* border: 2px solid green; */
 }
 
 .link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
+  gap: 10px;
+  padding: 12px 0px;
   font-size: 1rem;
   color: var(--text-dark);
   text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.2s, color 0.2s;
+  border-radius: 3px;
+  /* text-align: end !important; */
+  /* padding-left: 40px; */
+  /* transition:background 0.2s, */
+  /* color 0.2s; */
 }
 
 .link:hover {
@@ -64,12 +57,15 @@
 
 .link.active {
   background: var(--primary-blue);
-  color: #fff;
+  color: #fff !important;
+  margin: 2px 0px;
 }
 
 .leftbar-icon {
-  font-size: 1rem;
-  color: #ef4444;
+  font-size: 1.6rem;
+  color: gray;
+
+  padding-left: 10px;
 }
 
 /* Footer / logout */
@@ -94,4 +90,37 @@
 
 .logout-btn:hover {
   background: #ef4444;
+}
+
+/* Large Desktop */
+@media (max-width: 1400px) {
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+}
+
+/* Small Laptop */
+@media (max-width: 1024px) {
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+}
+
+/* Large Mobile */
+@media (max-width: 576px) {
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  .leftbar {
+    width: 35%;
+    background: var(--bg-sidebar);
+    /* display: flex; */
+    /* flex-direction: column; */
+    border-right: 1px solid var(--border-light);
+    flex: 1;
+    /* background-color: red; */
+  }
 }

@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import LeftBar from "../../../components/leftbar/LeftBar";
-import RighBar from "../../../components/rightbar/RighBar";
 import PostForm from "../../../components/form/PostForm";
+import RightBar from "../../../components/rightbar/RightBar";
 
 const PostJob = () => {
   return (
-    <div className="d-flex">
-      <LeftBar />
-      <RighBar>
-        <PostForm />
-      </RighBar>
-    </div>
+    <RightBar>
+      <PostForm />
+    </RightBar>
   );
 };
 

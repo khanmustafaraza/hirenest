@@ -2,11 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/auth/login/Login";
 import Dashboard from "./pages/admin/dashboard/Dashboard";
-import ManageUsers from "./pages/admin/manageusers/ManageUsers";
-import ManageJobs from "./pages/admin/managejobs/ManageJobs";
-import Applications from "./pages/admin/applications/Application";
 import PostJob from "./pages/admin/postjobs/PostJob";
-import RegisterList from "./pages/admin/registerlist/RegisterList";
 import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
@@ -42,18 +38,18 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/job-list" element={<JobList/>} />
-        <Route path="/job-category/:id" element={<JobFilterCategory/>} />
-        <Route path="/job-details/:id" element={<JobDetails/>} />
-        <Route path="/policy" element={<Policy/>} />
-        <Route path="/terms-conditions" element={<TermsAndConditions/>} />
+        <Route path="/job-list" element={<JobList />} />
+        <Route path="/job-category/:id" element={<JobFilterCategory />} />
+        <Route path="/job-details/:id" element={<JobDetails />} />
+        <Route path="/policy" element={<Policy />} />
+        <Route path="/terms-conditions" element={<TermsAndConditions />} />
 
         {/* user Route */}
 
-        <Route path = "/user-dashboard" element ={<UserDashboard/>}/>
-        <Route path = "/add-user-profile" element ={<UserProfile/>}/>
-        <Route path = "/user-profile-by-id" element ={<UserProfileById/>}/>
-        <Route path = "/apply-job-list" element ={<ApplyJobList/>}/>
+        <Route path="/user-dashboard" element={<UserDashboard />} />
+        <Route path="/add-user-profile" element={<UserProfile />} />
+        <Route path="/user-profile-by-id" element={<UserProfileById />} />
+        <Route path="/apply-job-list" element={<ApplyJobList />} />
 
         {/* ✔👀🔯 admin routes */}
         <Route path="/admin" element={<AdminRoute />}>
@@ -63,10 +59,15 @@ const App = () => {
           <Route path="admin-job-list" element={<AdminJobList />} />
           <Route path="/admin/add-post" element={<PostJob />} />
           <Route path="/admin/users-list" element={<UserList />} />
-          <Route path="/admin/users-register-list" element={<UserRegisterList />} />
+          <Route
+            path="/admin/users-register-list"
+            element={<UserRegisterList />}
+          />
           <Route path="/admin/job-applications" element={<JobApplication />} />
-          <Route path="/admin/job-application-list/:id" element={<JobApplicationList />} />
-        
+          <Route
+            path="/admin/job-application-list/:id"
+            element={<JobApplicationList />}
+          />
         </Route>
       </Routes>
     </>

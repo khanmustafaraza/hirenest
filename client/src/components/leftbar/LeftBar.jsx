@@ -16,8 +16,16 @@ import "./leftbar.css";
 
 const navLinks = [
   { to: "/admin/admin-dashboard", label: "Dashboard", icon: FaTachometerAlt },
-  { to: "/admin/add-job-category", label: "Add Job Category", icon: MdCategory },
-  { to: "/admin/job-category-list", label: "Job Category List", icon: IoMdList },
+  {
+    to: "/admin/add-job-category",
+    label: "Add Job Category",
+    icon: MdCategory,
+  },
+  {
+    to: "/admin/job-category-list",
+    label: "Job Category List",
+    icon: IoMdList,
+  },
   { to: "/admin/add-post", label: "Add Job", icon: FaPlus },
   { to: "/admin/admin-job-list", label: "Jobs List", icon: FaBriefcase },
   { to: "/admin/users-list", label: "Users List", icon: FaUsers },
@@ -27,20 +35,17 @@ const navLinks = [
 const LeftBar = () => {
   return (
     <aside className="leftbar">
-      <div className="leftbar-brand">
-        <h5>
-          Hire<span>Nest</span>
-        </h5>
-      </div>
-
       <nav className="leftbar-nav">
+        <div className="leftbar-brand">
+          <h5>
+            Hire<span>Nest</span>
+          </h5>
+        </div>
         {navLinks.map(({ to, label, icon: Icon }) => (
           <NavLink
             key={to}
             to={to}
-            className={({ isActive }) =>
-              isActive ? "link active" : "link"
-            }
+            className={({ isActive }) => (isActive ? "link active" : "link")}
           >
             <Icon className="leftbar-icon" />
             <span>{label}</span>
@@ -48,12 +53,12 @@ const LeftBar = () => {
         ))}
       </nav>
 
-      <div className="leftbar-footer">
+      {/* <div className="leftbar-footer">
         <button className="logout-btn">
           <FaSignOutAlt />
           <span>Logout</span>
         </button>
-      </div>
+      </div> */}
     </aside>
   );
 };

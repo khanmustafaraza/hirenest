@@ -1,99 +1,90 @@
 import React from "react";
 import { FaUsers, FaBriefcase, FaBookmark, FaFileAlt } from "react-icons/fa";
-
-import LeftBar from "../../../components/leftbar/LeftBar";
-import RighBar from "../../../components/rightbar/RighBar";
+import RightBar from "../../../components/rightbar/RightBar";
 
 const Dashboard = () => {
   return (
-    <div className="d-flex">
-      <LeftBar />
+    <RightBar>
+      <div className="container-fluid px-4 py-4">
+        {/* Page Title */}
+        <div className="mb-4">
+          <h5 className="fw-semibold text-dark">Dashboard Overview</h5>
+          <small className="text-muted">Admin summary & recent activity</small>
+        </div>
 
-      <RighBar>
-        <div className="container-fluid px-4 py-4">
-          {/* Page Title */}
-          <div className="mb-4">
-            <h5 className="fw-semibold text-dark">Dashboard Overview</h5>
-            <small className="text-muted">
-              Admin summary & recent activity
-            </small>
-          </div>
+        {/* Stats */}
+        <div className="row g-4">
+          <StatCard
+            icon={<FaUsers />}
+            title="Total Users"
+            value="120"
+            color="text-primary"
+          />
+          <StatCard
+            icon={<FaBriefcase />}
+            title="Jobs Posted"
+            value="35"
+            color="text-info"
+          />
+          <StatCard
+            icon={<FaBookmark />}
+            title="Saved Jobs"
+            value="64"
+            color="text-warning"
+          />
+          <StatCard
+            icon={<FaFileAlt />}
+            title="Applications"
+            value="22"
+            color="text-danger"
+          />
+        </div>
 
-          {/* Stats */}
-          <div className="row g-4">
-            <StatCard
-              icon={<FaUsers />}
-              title="Total Users"
-              value="120"
-              color="text-primary"
-            />
-            <StatCard
-              icon={<FaBriefcase />}
-              title="Jobs Posted"
-              value="35"
-              color="text-info"
-            />
-            <StatCard
-              icon={<FaBookmark />}
-              title="Saved Jobs"
-              value="64"
-              color="text-warning"
-            />
-            <StatCard
-              icon={<FaFileAlt />}
-              title="Applications"
-              value="22"
-              color="text-danger"
-            />
-          </div>
+        {/* Activity */}
+        <div className="mt-5">
+          <h6 className="fw-semibold mb-3">Recent Activity</h6>
 
-          {/* Activity */}
-          <div className="mt-5">
-            <h6 className="fw-semibold mb-3">Recent Activity</h6>
-
-            <div className="card shadow-sm border-0">
-              <ul className="list-group list-group-flush small">
-                <Activity
-                  text={
-                    <>
-                      New user{" "}
-                      <strong className="text-primary">Ali Raza</strong>{" "}
-                      registered
-                    </>
-                  }
-                  time="2 mins ago"
-                />
-                <Activity
-                  text={
-                    <>
-                      Job posted: <strong>Senior React Developer</strong>
-                    </>
-                  }
-                  time="10 mins ago"
-                />
-                <Activity
-                  text={
-                    <>
-                      <strong className="text-warning">Maria Khan</strong> saved
-                      a job
-                    </>
-                  }
-                  time="30 mins ago"
-                />
-                <Activity
-                  text={
-                    <>
-                      Application received for <strong>UI/UX Designer</strong>
-                    </>
-                  }
-                  time="1 hour ago"
-                />
-              </ul>
-            </div>
+          <div className="card shadow-sm border-0">
+            <ul className="list-group list-group-flush small">
+              <Activity
+                text={
+                  <>
+                    New user <strong className="text-primary">Ali Raza</strong>{" "}
+                    registered
+                  </>
+                }
+                time="2 mins ago"
+              />
+              <Activity
+                text={
+                  <>
+                    Job posted: <strong>Senior React Developer</strong>
+                  </>
+                }
+                time="10 mins ago"
+              />
+              <Activity
+                text={
+                  <>
+                    <strong className="text-warning">Maria Khan</strong> saved a
+                    job
+                  </>
+                }
+                time="30 mins ago"
+              />
+              <Activity
+                text={
+                  <>
+                    Application received for <strong>UI/UX Designer</strong>
+                  </>
+                }
+                time="1 hour ago"
+              />
+            </ul>
           </div>
         </div>
-      </RighBar>
-    </div>
+      </div>
+    </RightBar>
   );
 };
 
