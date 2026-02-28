@@ -1,7 +1,5 @@
 /* Fix flex layout issue */
-.job-category-page {
-  /* width: 100%; */
-}
+
 
 .content-wrapper {
   flex: 1;

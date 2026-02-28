@@ -7,7 +7,6 @@ const UserProfile = require("../../models/UserProfileModel");
  */
 const createJob = async (req, res) => {
   try {
- 
     const job = await Job.create(req.body);
 
     return res.status(201).json({
@@ -51,14 +50,11 @@ const getAllJobs = async (req, res) => {
 const getJobDetails = async (req, res) => {
   try {
     // const { jobId } = req.body;
-    
 
     // Validate jobId
-   
 
     // Find job by ID
     const job = await Job.findById(req.params.id);
-   
 
     if (!job) {
       return res.status(404).json({
@@ -140,7 +136,6 @@ const deleteJob = async (req, res) => {
 };
 // jobs find  by category
 
-
 //  applications of user find by job id
 
 const jobApplicationController = async (req, res) => {
@@ -181,6 +176,96 @@ const jobApplicationController = async (req, res) => {
   }
 };
 
+// job filter by category
+const jobFilterByCategory = async (req, res) => {
+  try {
+    const categoryId = req.params.id;
+
+    // Check if job exists
+    const categoryJob = await Job.find({ categoryName: categoryId });
+    if (!categoryJob) {
+      return res.status(404).json({
+        success: false,
+        message: "Job not found",
+      });
+    }
+
+    // Find applications for this job
+
+    return res.status(200).json({
+      success: true,
+      message: "Job filter  successfully",
+      data: categoryJob,
+    });
+  } catch (error) {
+    console.error("Job filter error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
+  }
+};
+const toggleJobIsFeatured = async (req, res) => {
+  try {
+    const jobId = req.params.id;
+    console.log(jobId)
+
+    // Check if job exists
+    const updateIsFeatured = await Job.findByIdAndUpdate({ _id: jobId },{
+      isFeatured:true
+    });
+    if (!updateIsFeatured) {
+      return res.status(404).json({
+        success: false,
+        message: "Job not Updated",
+      });
+    }
+
+    // Find applications for this job
+
+    return res.status(200).json({
+      success: true,
+      message: "Job updated  successfully",
+      isUpdate:true
+    });
+  } catch (error) {
+    console.error("Job update error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
+  }
+};
+const jobDeleteController = async (req, res) => {
+  try {
+    const jobId = req.params.id;
+    console.log(jobId)
+
+    // Check if job exists
+    const jobDelete = await Job.findByIdAndDelete({ _id: jobId });
+    if (!jobDelete) {
+      return res.status(404).json({
+        success: false,
+        message: "Job not delete",
+      });
+    }
+
+    // Find applications for this job
+
+    return res.status(200).json({
+      success: true,
+      message: "Job delete  successfully",
+     
+    });
+  } catch (error) {
+    console.error("Job delete error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
+  }
+};
+
 /**
  * Export Controllers
  */
@@ -190,5 +275,8 @@ module.exports = {
   getJobDetails,
   updateJob,
   deleteJob,
-  jobApplicationController
+  jobApplicationController,
+  jobFilterByCategory,
+  toggleJobIsFeatured,
+  jobDeleteController
 };
