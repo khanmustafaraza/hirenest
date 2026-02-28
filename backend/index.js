@@ -11,7 +11,7 @@ const userRoute  = require("./routes/userroute/UserRoute");
 dotenv.config();
 // ! MIDDLEWARES
 app.use(express.json());
-app.use(cors("*"));
+app.use(cors());
 
 // * DATABASE CONNECTION
 // connectDB();
